@@ -1,1 +1,25 @@
+# Temporary files created by vim
+.*.swp
+
+*.py[cod]
+
+.venv/
 venv/
+__pycache__/
+
+.idea/
+
+# Unit test / coverage reports
+.coverage
+nosetests.xml
+coverage.xml
+
+.vscode/settings.json
+.markdownlint.json
+
+# setup publication scratch directories
+build/
+dist/
+*.egg-info/
+
+.DS_Store
