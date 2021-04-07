@@ -9,7 +9,7 @@
    python3.8 -m venv venv
    source venv/bin/activate
    pip install -U pip
-   pip install -U -r requirements.txt
+   pip install -U -r requirements.txt -r requirements-test.txt
    ```
 
 1. Activate the virtualenv:
@@ -110,6 +110,7 @@ Run sceptre to configure the AWS account (substituting the appropriate
 environment):
 
 ```
+cd sceptre
 sceptre launch dev-private/us-west-2
 ```
 

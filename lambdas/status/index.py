@@ -122,20 +122,17 @@ def stat_summaries(campaigns):
         )
 
         if c.stats.total > 0:
-            html += (
-                "<tr><td>%s</td><td>%s</td><td>%d (%.1f%%)</td><td>%d (%.1f%%)</td><td>%d (%.1f%%)</td><td>%d (%.1f%%)</td></tr>\n"
-                % (
-                    c.name,
-                    c.launch_date,
-                    c.stats.sent,
-                    100.0 * (c.stats.sent / c.stats.total),
-                    c.stats.opened,
-                    100.0 * (c.stats.opened / c.stats.total),
-                    c.stats.clicked,
-                    100.0 * (c.stats.clicked / c.stats.total),
-                    c.stats.submitted_data,
-                    100.0 * (c.stats.submitted_data / c.stats.total),
-                )
+            html += "<tr><td>%s</td><td>%s</td><td>%d (%.1f%%)</td><td>%d (%.1f%%)</td><td>%d (%.1f%%)</td><td>%d (%.1f%%)</td></tr>\n" % (
+                c.name,
+                c.launch_date,
+                c.stats.sent,
+                100.0 * (c.stats.sent / c.stats.total),
+                c.stats.opened,
+                100.0 * (c.stats.opened / c.stats.total),
+                c.stats.clicked,
+                100.0 * (c.stats.clicked / c.stats.total),
+                c.stats.submitted_data,
+                100.0 * (c.stats.submitted_data / c.stats.total),
             )
 
     html += "</table>\n"

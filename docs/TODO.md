@@ -11,6 +11,7 @@
 ### Project
 
 * GitHub repository (gdcorp-infosec) w/ permissions
+* Tartufo configuration
 * Cloud Readiness Review
 * CICD - GitHub Actions
   - Infrastructure / Sceptre
@@ -39,4 +40,3 @@
 * Log/export status page matrics for dashboard visualization
 * Application security logging for Gophish admin portal
 * Links to additional resources/documentation on status page
-
