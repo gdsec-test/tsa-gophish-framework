@@ -1,0 +1,217 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: PhishFramework Status Page
+
+Parameters:
+  DevelopmentTeam:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: SSM Parameter for team owning the created resources.
+    Default: /AdminParams/Team/Name
+    AllowedValues:
+      - /AdminParams/Team/Name
+  DevelopmentEnvironment:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: SSM Parameter for development environment this will live in.
+    Default: /AdminParams/Team/Environment
+    AllowedValues:
+      - /AdminParams/Team/Environment
+  SSOHost:
+    Type: String
+    Description: SSO endpoint used by the status lambda
+    Default: "sso.gdcorp.tools"
+  DXVpcSecurityGroups:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: SSM Parameter for private dx app security group id
+    Default: /AdminParams/VPC/PrivateDXAPPSG
+    AllowedValues:
+      - /AdminParams/VPC/PrivateDXAPPSG
+  DXVpcSubnetIds:
+    Type: AWS::SSM::Parameter::Value<List<String>>
+    Description: SSM Parameter for private dx app subnet ids
+    Default: /AdminParams/VPC/DXAPPSubnets
+    AllowedValues:
+      - /AdminParams/VPC/DXAPPSubnets
+  StatusCertificateId:
+    Type: String
+    Description: ACM Certificate ID for ALB in front of the status lambda
+    Default: ""
+
+Resources:
+  StatusRole:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: IAMRole
+      ProvisioningArtifactName: 1.0.10
+      ProvisionedProductName: StatusRole
+      ProvisioningParameters:
+        - Key: RoleNameSuffix
+          Value: StatusRole
+        - Key: ManagedPolicyArns
+          Value: !Join
+            - ","
+            -
+              - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+              - arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
+              - arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess
+              - arn:aws:iam::aws:policy/CloudWatchLogsFullAccess
+              - !Sub arn:aws:iam::${AWS::AccountId}:policy/${DevelopmentTeam}-custom-GophishPolicySecretsManager
+        - Key: AssumingServices
+          Value: lambda.amazonaws.com
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  StatusLambda:
+    DependsOn:
+      - StatusRole
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: Lambda
+      ProvisioningArtifactName: 2.6.1
+      ProvisionedProductName: StatusLambda
+      ProvisioningParameters:
+        - Key: InlineCode
+          Value: !Sub |
+            # Stub handler that does nothing
+            def handler(event, context):
+                return {"statusCode": 200, "headers": {"Content-Type": "text/html"}, "body": "OK"}
+        - Key: Handler
+          Value: index.handler
+        - Key: LambdaName
+          Value: status
+        - Key: LambdaDescription
+          Value: GoDaddy Security Exercise Status lambda
+        - Key: MemorySize
+          Value: 256
+        - Key: Runtime
+          Value: python3.8
+        - Key: Timeout
+          Value: 15
+        - Key: CustomIAMRoleNameSuffix
+          Value: StatusRole
+        - Key: EnvironmentVariablesJson
+          Value: !Sub '{"SSO_HOST": "${SSOHost}"}'
+        - Key: VpcSecurityGroups
+          Value: !Ref DXVpcSecurityGroups
+        - Key: VpcSubnetIds
+          Value: !Join [ ",", !Ref DXVpcSubnetIds ]
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  StatusSecurityGroup:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: SecurityGroup
+      ProvisioningArtifactName: 1.0.7
+      ProvisionedProductName: StatusSecurityGroup
+      ProvisioningParameters:
+        - Key: GroupName
+          Value: status-alb-sg
+        - Key: GroupDescription
+          Value: statusLoadBalancerSecurityGroup
+        - Key: IngressRulesJSON
+          Value: '[
+              {"CidrIp": "0.0.0.0/0", "FromPort": 443, "ToPort": 443, "IpProtocol": "tcp"},
+              {"CidrIp": "0.0.0.0/0", "FromPort": 80, "ToPort": 80, "IpProtocol": "tcp"}
+          ]'
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  StatusALB:
+    DependsOn:
+      - StatusSecurityGroup
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: ApplicationALB
+      ProvisioningArtifactName: 2.0.1
+      ProvisionedProductName: StatusALB
+      ProvisioningParameters:
+        - Key: LoadBalancerName
+          Value: status
+        - Key: SecurityGroupIds
+          Value: !GetAtt [StatusSecurityGroup, Outputs.SecurityGroupId]
+        - Key: VPCSubnetIds
+          Value: !Join [ ",", !Ref DXVpcSubnetIds ]
+        - Key: TrafficType
+          Value: internal
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  StatusALBListener:
+    DependsOn:
+      - StatusALB
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: ALBListener
+      ProvisioningArtifactName: 2.0.4
+      ProvisionedProductName: StatusALBListener
+      ProvisioningParameters:
+        - Key: ListenerName
+          Value: status-https
+        - Key: LoadBalancerArn
+          Value: !GetAtt [StatusALB, Outputs.LoadBalancerArn]
+        - Key: Port
+          Value: 443
+        - Key: Protocol
+          Value: HTTPS
+        - Key: CertificateArn
+          Value: !Sub arn:aws:acm:${AWS::Region}:${AWS::AccountId}:certificate/${StatusCertificateId}
+        - Key: DefaultActionsJson
+          Value: '[{"Type": "fixed-response", "FixedResponseConfig": {"StatusCode": "404"}}]'
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  StatusALBListenerHTTPRedirect:
+    DependsOn:
+      - StatusALB
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: ALBListener
+      ProvisioningArtifactName: 2.0.4
+      ProvisionedProductName: StatusALBListenerHTTPRedirect
+      ProvisioningParameters:
+        - Key: ListenerName
+          Value: status-http
+        - Key: LoadBalancerArn
+          Value: !GetAtt [StatusALB, Outputs.LoadBalancerArn]
+        - Key: Port
+          Value: 80
+        - Key: Protocol
+          Value: HTTP
+        - Key: DefaultActionsJson
+          Value: '[{"Type": "redirect", "RedirectConfig": {"Port": "443", "Protocol": "HTTPS", "StatusCode": "HTTP_301"}}]'
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  StatusLambdaALBRoute:
+    DependsOn:
+      - StatusLambda
+      - StatusALBListener
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: LambdaALBRoute
+      ProvisioningArtifactName: 1.2.0
+      ProvisionedProductName: StatusLambdaALBRoute
+      ProvisioningParameters:
+        - Key: AliasName
+          Value: status
+        - Key: FunctionName
+          Value: status
+        - Key: HealthCheckPath
+          Value: "/healthcheck"
+        - Key: ConditionsJson
+          Value: '[{"Field": "path-pattern", "Values": ["/", "/healthcheck"]}]'
+        - Key: ListenerArn
+          Value: !GetAtt [StatusALBListener, Outputs.ListenerArn]
+        - Key: Priority
+          Value: 100
+        - Key: TargetGroupName
+          Value: status
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+

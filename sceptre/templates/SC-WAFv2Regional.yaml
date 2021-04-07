@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: PhishFramework WAFv2 Regional ACL
+
+Resources:
+  GophishWAFv2Regional:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: WAFv2Regional
+      ProvisioningArtifactName: 3.1.0
+      ProvisionedProductName: GophishWAFv2Regional
+      ProvisioningParameters:
+        - Key: ACLPrefix
+          Value: gophish
+        - Key: IPRateLimit
+          Value: 2000
+        - Key: CommonRuleExcludesJson
+          Value: '[
+            "SizeRestrictions_BODY",
+            "GenericRFI_QUERYARGUMENTS", "GenericRFI_BODY", "GenericRFI_URIPATH",
+            "CrossSiteScripting_COOKIE", "CrossSiteScripting_QUERYARGUMENTS", "CrossSiteScripting_BODY", "CrossSiteScripting_URIPATH"
+          ]'
+      Tags:
+        - Key: doNotShutDown
+          Value: true

@@ -1,0 +1,6 @@
+project_code: PhishFramework
+gophish_certificate_id: ""
+landing_certificate_id: ""
+status_certificate_id: ""
+gophish_api_url: ""
+sso_host: sso.gdcorp.tools

@@ -1,0 +1,6 @@
+template_path: SC-StatusPage.yaml
+dependencies:
+  - {{environment}}/{{region}}/SC-CoreResources.yaml
+parameters:
+  SSOHost: {{sso_host}}
+  StatusCertificateId: {{status_certificate_id}}
