@@ -3,6 +3,10 @@ Gophish framework for social engineering security exercises
 
 ### Documentation
 
+* [Architecture Overview](docs/ARCHITECTURE.md)
+
+  High level overview of the PhishFramework project.
+
 * [Infrastructure Setup / Provisioning](docs/SCEPTRE.md)
 
   Sceptre documentation for provisioning the PhishFramework project.
