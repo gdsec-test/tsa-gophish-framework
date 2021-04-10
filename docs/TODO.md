@@ -3,10 +3,8 @@
 ### Documentation
 
 * Introduction
-* Architecture (w/ diagram)
 * Provisioning Process (including manual steps)
 * Troubleshooting
-* Openstack smtp proxy
 
 ### Project
 
