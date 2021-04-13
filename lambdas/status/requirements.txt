@@ -1,0 +1,2 @@
+gophish
+git+ssh://git@github.secureserver.net/auth-contrib/PyAuth.git@7.2.2#egg=PyAuth

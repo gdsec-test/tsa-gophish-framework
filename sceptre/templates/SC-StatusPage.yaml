@@ -34,6 +34,10 @@ Parameters:
     Type: String
     Description: ACM Certificate ID for ALB in front of the status lambda
     Default: ""
+  StatusLambdaHash:
+    Type: String
+    Description: SHA1 hash of the status lambda source
+    Default: ""
 
 Resources:
   StatusRole:
@@ -69,17 +73,16 @@ Resources:
       ProvisioningArtifactName: 2.6.1
       ProvisionedProductName: StatusLambda
       ProvisioningParameters:
-        - Key: InlineCode
-          Value: !Sub |
-            # Stub handler that does nothing
-            def handler(event, context):
-                return {"statusCode": 200, "headers": {"Content-Type": "text/html"}, "body": "OK"}
+        - Key: S3Bucket
+          Value: !Sub gd-${DevelopmentTeam}-${DevelopmentEnvironment}-code-bucket
+        - Key: S3Key
+          Value: !Sub status/${StatusLambdaHash}
         - Key: Handler
           Value: index.handler
         - Key: LambdaName
           Value: status
         - Key: LambdaDescription
-          Value: GoDaddy Security Exercise Status lambda
+          Value: !Sub Security Exercise Status lambda (${StatusLambdaHash})
         - Key: MemorySize
           Value: 256
         - Key: Runtime

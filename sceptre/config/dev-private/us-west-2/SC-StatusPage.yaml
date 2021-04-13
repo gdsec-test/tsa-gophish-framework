@@ -4,3 +4,9 @@ dependencies:
 parameters:
   SSOHost: {{sso_host}}
   StatusCertificateId: {{status_certificate_id}}
+  StatusLambdaHash: !file_contents ../lambdas/status/lambda.sha1
+hooks:
+  before_create:
+    - !cmd resources/build-lambdas.sh
+  before_update:
+    - !cmd resources/build-lambdas.sh
