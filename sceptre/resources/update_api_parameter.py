@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+"""\
+This script creates or modifies the secretsmanager entry "GophishAPI" used by
+the status lambda.  The entry contains connection information for the Gophish
+API, and the status lambda uses this when retrieving campaign summary
+information.
+"""
+
 import json
 
 import botocore

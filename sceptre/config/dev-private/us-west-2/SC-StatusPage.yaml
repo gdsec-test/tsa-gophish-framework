@@ -8,5 +8,7 @@ parameters:
 hooks:
   before_create:
     - !cmd resources/build-lambdas.sh
+    - !cmd resources/update_api_parameter.py
   before_update:
     - !cmd resources/build-lambdas.sh
+    - !cmd resources/update_api_parameter.py

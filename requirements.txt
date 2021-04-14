@@ -1,4 +1,5 @@
 awscli
 aws-okta-processor
 boto3
+PyMySQL
 sceptre
