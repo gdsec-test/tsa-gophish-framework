@@ -60,28 +60,6 @@ Resources:
         - Key: doNotShutDown
           Value: true
 
-  GophishDBAdminCredentials:
-    Type: AWS::SecretsManager::Secret
-    Properties:
-      Name: GophishDBAdminCredentials
-      Description: Gophish DB cluster admin credentials
-      GenerateSecretString:
-        SecretStringTemplate: '{"username": "admin"}'
-        GenerateStringKey: "password"
-        PasswordLength: 16
-        ExcludeCharacters: '$"@/\'
-
-  GophishDBUserCredentials:
-    Type: AWS::SecretsManager::Secret
-    Properties:
-      Name: GophishDBUserCredentials
-      Description: Gophish DB cluster user credentials
-      GenerateSecretString:
-        SecretStringTemplate: '{"username": "gophish"}'
-        GenerateStringKey: "password"
-        PasswordLength: 16
-        ExcludeCharacters: '$"@/\'
-
   GophishPolicySecretsManager:
     Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
     Properties:
@@ -162,30 +140,6 @@ Resources:
       Name: /Gophish/API/Url
       Type: String
       Value: !Ref GophishAPIUrl
-
-  # https://github.com/gophish/user-guide/blob/master/installation.md#update-mysql-config
-  GophishDBCluster:
-    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
-    Properties:
-      ProductName: Aurora
-      ProvisioningArtifactName: 1.5.0
-      ProvisionedProductName: GophishDBCluster
-      ProvisioningParameters:
-        - Key: MasterUsername
-          Value: gdadministrator
-        - Key: EngineFamily
-          Value: aurora-mysql5.7
-        - Key: InstanceType
-          Value: serverless
-        - Key: DatabaseClusterName
-          Value: gophish
-        - Key: CustomClusterParameterJSON
-          Value: '{
-            "sql_mode": "ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
-          }'
-      Tags:
-        - Key: doNotShutDown
-          Value: true
 
   GophishService:
     DependsOn:

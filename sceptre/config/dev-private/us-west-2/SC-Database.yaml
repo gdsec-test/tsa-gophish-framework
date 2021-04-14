@@ -1,0 +1,6 @@
+template_path: SC-Database.yaml
+hooks:
+  after_create:
+    - !cmd resources/create_gophish_db.py
+  after_update:
+    - !cmd resources/create_gophish_db.py
