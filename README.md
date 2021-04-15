@@ -15,6 +15,11 @@ Gophish framework for social engineering security exercises
 
   Sceptre documentation for provisioning the PhishFramework project.
 
+* [Playbooks](docs/PLAYBOOKS.md)
+
+  Step by step instructions for common maintenance operations, such as
+  deploying new builds of the Gophish container or status lambda.
+
 * [OpenStack SMTP Proxy Configuration](docs/SMTP_PROXY.md)
 
   Gophish doesn't technically require a dedicated SMTP proxy, but this may be
