@@ -38,7 +38,7 @@ steps should be followed for now:
 **Using Sceptre**
 
 1. Obtain deploy role credentials (see [Infrastructure Setup /
-   Provisioning](docs/SCEPTRE.md))
+   Provisioning](SCEPTRE.md))
 
 1. Use `sceptre launch dev-private/us-west-2` (substitute appropriate
    environment)
@@ -110,7 +110,7 @@ To configure a certificate for use by a landing page, follow these steps:
    ```
 
 1. Run sceptre for the given environment.  See [Infrastructure Setup /
-   Provisioning](docs/SCEPTRE.md) for more information.
+   Provisioning](SCEPTRE.md) for more information.
 
 1. Specify the URL for the landing page when creating a new Gophish campaign.
    See [Creating the Landing
