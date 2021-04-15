@@ -2,8 +2,6 @@
 
 ### Documentation
 
-* Introduction
-* Provisioning Process (including manual steps)
 * Troubleshooting
 
 ### Project

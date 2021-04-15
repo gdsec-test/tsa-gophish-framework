@@ -3,6 +3,10 @@ Gophish framework for social engineering security exercises
 
 ### Documentation
 
+* [Introduction](docs/INTRODUCTION.md)
+
+  Introduction to the PhishFramework project.
+
 * [Architecture Overview](docs/ARCHITECTURE.md)
 
   High level overview of the PhishFramework project.

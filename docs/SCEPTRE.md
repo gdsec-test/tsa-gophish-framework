@@ -111,6 +111,13 @@ environment):
 
 ```
 cd sceptre
+
+# Deploy Gophish admin infrastructure
+sceptre launch dev-private/us-west-2/SC-CoreResources.yaml
+
+# Verify Gophish admin page is available
+
+# Deploy Gophish status page
 sceptre launch dev-private/us-west-2
 ```
 
