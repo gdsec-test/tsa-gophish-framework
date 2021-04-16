@@ -116,3 +116,14 @@ To configure a certificate for use by a landing page, follow these steps:
    See [Creating the Landing
    Page](https://docs.getgophish.com/user-guide/building-your-first-campaign/creating-the-landing-page)
    for more information from the Gophish documentation.
+
+1. Create or update a **DNS CNAME** entry corresponding to the landing page,
+   setting its value to the DNS name of the load balancer created by the
+   Sceptre invocation:
+
+   ```
+   aws elbv2 describe-load-balancers \
+       --names landing \
+       --query 'LoadBalancers[].DNSName' \
+       --output text
+   ```
