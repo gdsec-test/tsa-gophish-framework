@@ -40,4 +40,3 @@ aws ecr get-login-password --region us-west-2 | sudo docker login --username AWS
 sudo docker tag gophish:latest ${AWS_ACCOUNT_ID}.dkr.ecr.us-west-2.amazonaws.com/gophish:latest
 sudo docker push ${AWS_ACCOUNT_ID}.dkr.ecr.us-west-2.amazonaws.com/gophish:latest
 ```
-

@@ -1,5 +1,7 @@
 awscli
 aws-okta-processor
 boto3
+pre-commit
 PyMySQL
 sceptre
+tartufo
