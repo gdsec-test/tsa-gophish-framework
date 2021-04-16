@@ -69,11 +69,15 @@
 ### AWS Certificate Manager (ACM) Setup
 
 1. Use [Cloud UI](https://cloud.int.godaddy.com/security/certs) to request a
-   certificate for the FQDN to be used, such as
+   certificate for the FQDN to be used by the **admin** interface, such as
    `admin.phish.int.dev-gdcorp.tools`.
 
-1. Download the certificate, private key, and certificate chain from Cloud UI
-   to your local workstation.
+1. Use [Cloud UI](https://cloud.int.godaddy.com/security/certs) to request a
+   certificate for the FQDN to be used by the **status** interface, such as
+   `phish.int.dev-gdcorp.tools`.
+
+1. For each certificate requested above, download the certificate, private key,
+   and certificate chain from Cloud UI to your local workstation.
 
 1. Run the following using the deployment role, such as
    `GD-AWS-USA-CTO-Phish-Dev-Private-Deploy`:
@@ -85,6 +89,11 @@
        --certificate file://admin.phish.int.dev-gdcorp.tools.crt \
        --private-key file://admin.phish.int.dev-gdcorp.tools.key \
        --certificate-chain file://admin.phish.int.dev-gdcorp.tools_intermediate_chain.crt
+
+   aws acm import-certificate \
+       --certificate file://phish.int.dev-gdcorp.tools.crt \
+       --private-key file://phish.int.dev-gdcorp.tools.key \
+       --certificate-chain file://phish.int.dev-gdcorp.tools_intermediate_chain.crt
    ```
 
    * PROD
@@ -94,15 +103,22 @@
        --certificate file://admin.phish.int.gdcorp.tools.crt \
        --private-key file://admin.phish.int.gdcorp.tools.key \
        --certificate-chain file://admin.phish.int.gdcorp.tools_intermediate_chain.crt
+
+   aws acm import-certificate \
+       --certificate file://phish.int.gdcorp.tools.crt \
+       --private-key file://phish.int.gdcorp.tools.key \
+       --certificate-chain file://phish.int.gdcorp.tools_intermediate_chain.crt
    ```
 
 1. Delete the downloaded copies of the certificate, private key, and
    certificate chain from your local workstation.
 
-1. Note the UUID contained in the `CertificateArn` that is displayed when the
-   certificate is imported.  This value should match that specified by
-   `gophish_certificate_id` in the Sceptre configuration file for the current
-   environment.
+1. Note the UUID contained in the `CertificateArn` that is displayed when each
+   certificate is imported.  These values should match those specified by
+   `gophish_certificate_id` and `status_certificate_id` in the Sceptre
+   configuration file for the current environment.  N.B. the
+   `landing_certificate_id` is used by the phishing landing page and is
+   described [here](PLAYBOOKS.md#phish-domain-configuration).
 
 ### Sceptre / CloudFormation / Service Catalog
 
@@ -121,16 +137,30 @@ sceptre launch dev-private/us-west-2/SC-CoreResources.yaml
 sceptre launch dev-private/us-west-2
 ```
 
-### Update DNS CNAME Entry
+### Update DNS CNAME Entries
 
 1. Use [Cloud UI](https://cloud.int.godaddy.com/networking/dnsrecords) to
-   create or update a `CNAME` DNS record for the specified FQDN that points to
-   the `DNSName` of the newly created `gophish` load balancer.  The target of
-   the CNAME record should match the output of:
+   create or update a `CNAME` DNS record for the specified FQDN of the Gophish
+   administrative interface.  It should reference the `DNSName` of the newly
+   created `gophish` load balancer.  The target of the CNAME record should
+   match the output of:
 
    ```
    aws elbv2 describe-load-balancers \
        --names gophish \
+       --query 'LoadBalancers[].DNSName' \
+       --output text
+   ```
+
+1. Use [Cloud UI](https://cloud.int.godaddy.com/networking/dnsrecords) to
+   create or update a `CNAME` DNS record for the specified FQDN of the Gophish
+   status page.  It should reference the `DNSName` of the newly created
+   `status` load balancer.  The target of the CNAME record should match the
+   output of:
+
+   ```
+   aws elbv2 describe-load-balancers \
+       --names status \
        --query 'LoadBalancers[].DNSName' \
        --output text
    ```
