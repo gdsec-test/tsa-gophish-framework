@@ -59,3 +59,7 @@ active and archived campaigns.  The summarized campaign information is
 presented to the caller via a simple HTML table.  At present, the user is not
 able to interact with the Gophish service in any way other than a read-only
 retrieval of campaign statistics.
+
+### Gophish Sequence Diagram
+
+![Gophish Sequence Diagram](diagrams/gophish_sequence.svg "Gophish Sequence Diagram")

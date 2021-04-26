@@ -1,0 +1,57 @@
+@startuml
+skinparam BoxPadding 10
+
+actor "Gophish\nAdmin" as Admin
+actor "GoDaddy\nEmployee" as Target
+
+box "AWS" #LightBlue
+participant "Status\nLambda" as Status_Lambda
+participant "Gophish Server\n(Admin)" as Admin_Server
+participant "Gophish Server\n(Phish)" as Phish_Server
+end box
+
+box "GoDaddy" #LightGrey
+participant SSO
+end box
+
+box "Internet" #LightGrey
+participant "Office 365" as Office_365
+end box
+
+== Gophish administrator creates campaign ==
+
+Admin -> Admin_Server : Create campaign
+Admin -> Admin_Server : Launch campaign
+Admin_Server -> Office_365 : Deliver phish email
+...
+
+== Employee clicks link in email ==
+
+Target -> Office_365 : Get new email
+Office_365 -> Target : Phish email
+Target -> Phish_Server : Click phishing link
+Phish_Server -> Target : Phish landing page
+Target -> Phish_Server : Supply credentials
+...
+
+== Employee checks security exercise status ==
+
+Target -> Status_Lambda : Request status\n(unauthenticated)
+activate Status_Lambda
+Status_Lambda -> SSO : Validate JWT
+SSO -> Status_Lambda : Unauthenticated
+Status_Lambda -> Target : Redirect to SSO login
+deactivate Status_Lambda
+...
+
+Target -> Status_Lambda : Request status\n(authenticated)
+activate Status_Lambda
+Status_Lambda -> SSO : Validate JWT
+SSO -> Status_Lambda : Authenticated
+Status_Lambda -> Admin_Server : Query campaign stats
+Admin_Server -> Status_Lambda : Campaign stats
+Status_Lambda -> Target : HTML report (stats)
+deactivate Status_Lambda
+...
+
+@enduml
