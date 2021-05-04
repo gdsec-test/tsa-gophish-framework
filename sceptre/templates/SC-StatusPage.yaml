@@ -78,7 +78,7 @@ Resources:
         - Key: S3Key
           Value: !Sub status/${StatusLambdaHash}
         - Key: Handler
-          Value: index.handler
+          Value: status.handler
         - Key: LambdaName
           Value: status
         - Key: LambdaDescription

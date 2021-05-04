@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """\
 GoDaddy Security Exercise Status page
 
@@ -7,8 +5,6 @@ This page directly renders HTML that enumerates any active and archived Gophish
 campaigns.
 """
 
-import datetime
-from http import cookies
 import json
 import logging
 import os
@@ -16,8 +12,7 @@ from textwrap import dedent
 
 import boto3
 from gophish import Gophish
-
-from gd_auth.token import AuthToken, TokenBusinessLevel
+from auth import valid_jwt
 
 log = logging.getLogger(__name__)
 log.setLevel(level=logging.DEBUG)
@@ -102,6 +97,12 @@ HTML_FOOTER = dedent(
 
 SSO_HOST = os.getenv("SSO_HOST", "sso.gdcorp.tools")
 
+HTML_UNAVAILABLE = (
+    HTML_HEADER
+    + '<div id="active_banner">Security exercise status unavailable</div>\n'
+    + HTML_FOOTER
+)
+
 
 def stat_summaries(campaigns):
     """Generate HTML containing statistics for a list of campaigns"""
@@ -140,49 +141,6 @@ def stat_summaries(campaigns):
     return html
 
 
-def valid_jwt(event):
-    """Make sure the request header includes a valid JWT"""
-
-    # Check for existing auth_jomax cookie
-    try:
-        cookie_header = event["headers"]["cookie"]
-        jwt = cookies.SimpleCookie(cookie_header)["auth_jomax"].value
-
-    except KeyError:
-        log.error("No auth_jomax cookie present")
-        return False
-
-    # Validate provided auth_jomax cookie
-    try:
-        auth_token = AuthToken.parse(
-            jwt,
-            SSO_HOST,
-            app="PhishStatus",
-            typ="jomax",
-            level=TokenBusinessLevel.MEDIUM,
-        )
-        if auth_token:
-            log.debug("ftc: %d", auth_token.payload["ftc"])
-            log.debug("factors: %s", json.dumps(auth_token.payload["factors"]))
-            log.debug("accountName: %s", auth_token.payload["accountName"])
-
-            iat = auth_token.payload["iat"]
-            iat_str = datetime.datetime.fromtimestamp(
-                iat, tz=datetime.timezone.utc
-            ).isoformat()
-            log.debug("iat: %d (%s)", iat, iat_str)
-
-            return True
-
-    except Exception:
-        log.exception("Unable to parse auth_jomax cookie:")
-        return False
-
-    # AuthToken.parse() returned None for some reason; reject the cookie
-    log.error("Invalid auth_jomax cookie")
-    return False
-
-
 def handler(event, context):
     """Default lambda handler"""
 
@@ -202,6 +160,8 @@ def handler(event, context):
         }
 
     try:
+        #       gophish_key, gophish_url = get_gophish_api
+
         api = Gophish(GOPHISH_API_KEY, host=GOPHISH_API_URL)
 
         summaries = api.campaigns.summary()
@@ -237,10 +197,11 @@ def handler(event, context):
         }
 
     except Exception:
-        result = {"statusCode": 500, "body": "Internal Server Error"}
+        log.exception("Unable to retrieve gophish status")
+        result = {
+            "statusCode": 200,
+            "headers": {"Content-Type": "text/html"},
+            "body": HTML_UNAVAILABLE,
+        }
 
     return result
-
-
-if __name__ == "__main__":
-    handler(None, None)
