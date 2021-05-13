@@ -63,3 +63,7 @@ retrieval of campaign statistics.
 ### Gophish Sequence Diagram
 
 ![Gophish Sequence Diagram](diagrams/gophish_sequence.svg "Gophish Sequence Diagram")
+
+### Gophish Dependency Diagram
+
+![Gophish Dependency Diagram](diagrams/gophish_dependency.svg "Gophish Dependency Diagram")
