@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1119px" preserveAspectRatio="none" style="width:1428px;height:1119px;" version="1.1" viewBox="0 0 1428 1119" width="1428px" zoomAndPan="magnify"><defs/><g><!--MD5=[3837e54a100ccf6f35b7c6c739890e2c]
+class attachments--><rect codeLine="11" fill="#FFFFFF" height="104.0234" id="attachments" style="stroke:#FF0066;stroke-width:1.5;" width="200" x="7" y="572"/><ellipse cx="62.75" cy="588" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M63.5938,594.75 L61.1406,594.75 L61.1406,584.5 L58,584.5 L58,582.3594 L66.7344,582.3594 L66.7344,584.5 L63.5938,584.5 L63.5938,594.75 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="80" x="83.25" y="592.1543">attachments</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="8" x2="206" y1="604" y2="604"/><ellipse cx="18" cy="615" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="27" y="618.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="123" y="618.2104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="27" y="631.0151">template_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="123" y="631.0151">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="27" y="643.8198">content</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="51" x="123" y="643.8198">?longtext</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="24" x="27" y="656.6245">type</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="91" y="656.6245">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="32" x="27" y="669.4292">name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="123" y="669.4292">?varchar(255)</text><!--MD5=[90b245cba82193d6b7061fa717e89444]
+class campaigns--><rect codeLine="19" fill="#FFFFFF" height="193.6563" id="campaigns" style="stroke:#FF0066;stroke-width:1.5;" width="232" x="242" y="527"/><ellipse cx="319.75" cy="543" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M320.5938,549.75 L318.1406,549.75 L318.1406,539.5 L315,539.5 L315,537.3594 L323.7344,537.3594 L323.7344,539.5 L320.5938,539.5 L320.5938,549.75 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68" x="340.25" y="547.1543">campaigns</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="243" x2="473" y1="559" y2="559"/><ellipse cx="253" cy="570" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="262" y="573.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="390" y="573.2104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="262" y="586.0151">user_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="390" y="586.0151">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="32" x="262" y="598.8198">name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="390" y="598.8198">varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="262" y="611.6245">created_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="358" y="611.6245">?datetime</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="90" x="262" y="624.4292">completed_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="358" y="624.4292">?datetime</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="262" y="637.2339">template_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="390" y="637.2339">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="262" y="650.0386">page_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="390" y="650.0386">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="262" y="662.8433">status</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="390" y="662.8433">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="15" x="262" y="675.6479">url</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="390" y="675.6479">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="262" y="688.4526">smtp_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="390" y="688.4526">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="68" x="262" y="701.2573">launch_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="390" y="701.2573">?datetime</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="262" y="714.062">send_by_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="358" y="714.062">?datetime</text><!--MD5=[bb9030bbd64e8dbfe2b08306f4cd9bcc]
+class email_requests--><rect codeLine="34" fill="#FFFFFF" height="180.8516" id="email_requests" style="stroke:#FF0066;stroke-width:1.5;" width="232" x="509" y="533.5"/><ellipse cx="573.25" cy="549.5" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M574.0938,556.25 L571.6406,556.25 L571.6406,546 L568.5,546 L568.5,543.8594 L577.2344,543.8594 L577.2344,546 L574.0938,546 L574.0938,556.25 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="95" x="593.75" y="553.6543">email_requests</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="510" x2="740" y1="565.5" y2="565.5"/><ellipse cx="520" cy="576.5" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="529" y="579.7104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="657" y="579.7104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="529" y="592.5151">user_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="657" y="592.5151">?int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="529" y="605.3198">template_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="657" y="605.3198">?int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="529" y="618.1245">page_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="657" y="618.1245">?int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="529" y="630.9292">first_name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="625" y="630.9292">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="529" y="643.7339">last_name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="625" y="643.7339">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="529" y="656.5386">email</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="625" y="656.5386">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="529" y="669.3433">position</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="625" y="669.3433">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="15" x="529" y="682.1479">url</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="657" y="682.1479">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="529" y="694.9526">r_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="625" y="694.9526">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="529" y="707.7573">from_address</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="625" y="707.7573">?varchar(255)</text><!--MD5=[3835c41c6c66614013ee4625906c7097]
+class events--><rect codeLine="48" fill="#FFFFFF" height="116.8281" id="events" style="stroke:#FF0066;stroke-width:1.5;" width="200" x="66" y="64.5"/><ellipse cx="140.75" cy="80.5" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M141.5938,87.25 L139.1406,87.25 L139.1406,77 L136,77 L136,74.8594 L144.7344,74.8594 L144.7344,77 L141.5938,77 L141.5938,87.25 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="42" x="161.25" y="84.6543">events</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="67" x2="265" y1="96.5" y2="96.5"/><ellipse cx="77" cy="107.5" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="86" y="110.7104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="182" y="110.7104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="71" x="86" y="123.5151">campaign_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="182" y="123.5151">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="86" y="136.3198">email</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="150" y="136.3198">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="86" y="149.1245">time</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="150" y="149.1245">?datetime</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="86" y="161.9292">message</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="182" y="161.9292">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="38" x="86" y="174.7339">details</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="182" y="174.7339">?blob</text><path d="M301.5,88 L301.5,96.5664 L228,132.5117 L301.5,104.5664 L301.5,113.1328 A0,0 0 0 0 301.5,113.1328 L410.5,113.1328 A0,0 0 0 0 410.5,113.1328 L410.5,98 L400.5,88 L301.5,88 A0,0 0 0 0 301.5,88 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M400.5,88 L400.5,98 L410.5,98 L400.5,88 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="307.5" y="105.0669">PII_EMPLOYEE</text><path d="M301.5,123.1328 L301.5,131.6992 L212,170.9258 L301.5,139.6992 L301.5,148.2656 A0,0 0 0 0 301.5,148.2656 L416.5,148.2656 A0,0 0 0 0 416.5,148.2656 L416.5,133.1328 L406.5,123.1328 L301.5,123.1328 A0,0 0 0 0 301.5,123.1328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M406.5,123.1328 L406.5,133.1328 L416.5,133.1328 L406.5,123.1328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="307.5" y="140.1997">SENSITIVE?(IP)</text><!--MD5=[85aafb1fab5150226dc853b883bfa8f2]
+class goose_db_version--><rect codeLine="65" fill="#FFFFFF" height="91.2188" id="goose_db_version" style="stroke:#FF0066;stroke-width:1.5;" width="231" x="776.5" y="578.5"/><ellipse cx="831.75" cy="594.5" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M832.5938,601.25 L830.1406,601.25 L830.1406,591 L827,591 L827,588.8594 L835.7344,588.8594 L835.7344,591 L832.5938,591 L832.5938,601.25 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="112" x="852.25" y="598.6543">goose_db_version</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="777.5" x2="1006.5" y1="610.5" y2="610.5"/><ellipse cx="787.5" cy="621.5" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="796.5" y="624.7104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="109" x="892.5" y="624.7104">bigint(20) unsigned</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="796.5" y="637.5151">version_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="860.5" y="637.5151">bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="796.5" y="650.3198">is_applied</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="860.5" y="650.3198">tinyint(1)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="40" x="796.5" y="663.1245">tstamp</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="892.5" y="663.1245">?timestamp</text><!--MD5=[cdb171361f4cf8a7a157e29e3bfaf950]
+class group_targets--><rect codeLine="72" fill="#FFFFFF" height="65.6094" id="group_targets" style="stroke:#FF0066;stroke-width:1.5;" width="135" x="1042.5" y="591"/><ellipse cx="1063.8" cy="607" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M1064.6438,613.75 L1062.1906,613.75 L1062.1906,603.5 L1059.05,603.5 L1059.05,601.3594 L1067.7844,601.3594 L1067.7844,603.5 L1064.6438,603.5 L1064.6438,613.75 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="89" x="1079.2" y="611.1543">group_targets</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="1043.5" x2="1176.5" y1="623" y2="623"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="1048.5" y="637.2104">group_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="1112.5" y="637.2104">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50" x="1048.5" y="650.0151">target_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="1112.5" y="650.0151">?bigint(20)</text><!--MD5=[0d2656fadf7191851afd801497368241]
+class groups--><rect codeLine="77" fill="#FFFFFF" height="91.2188" id="groups" style="stroke:#FF0066;stroke-width:1.5;" width="232" x="55" y="806.5"/><ellipse cx="144.75" cy="822.5" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M145.5938,829.25 L143.1406,829.25 L143.1406,819 L140,819 L140,816.8594 L148.7344,816.8594 L148.7344,819 L145.5938,819 L145.5938,829.25 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="44" x="165.25" y="826.6543">groups</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="56" x2="286" y1="838.5" y2="838.5"/><ellipse cx="66" cy="849.5" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="75" y="852.7104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="203" y="852.7104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="75" y="865.5151">user_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="203" y="865.5151">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="32" x="75" y="878.3198">name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="203" y="878.3198">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="75" y="891.1245">modified_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="171" y="891.1245">?datetime</text><!--MD5=[c953674611ad3f6fc7f30a48828d8ae3]
+class headers--><rect codeLine="84" fill="#FFFFFF" height="91.2188" id="headers" style="stroke:#FF0066;stroke-width:1.5;" width="168" x="322" y="806.5"/><ellipse cx="375.75" cy="822.5" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M376.5938,829.25 L374.1406,829.25 L374.1406,819 L371,819 L371,816.8594 L379.7344,816.8594 L379.7344,819 L376.5938,819 L376.5938,829.25 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="52" x="396.25" y="826.6543">headers</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="323" x2="489" y1="838.5" y2="838.5"/><ellipse cx="333" cy="849.5" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="342" y="852.7104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="406" y="852.7104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="19" x="342" y="865.5151">key</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="406" y="865.5151">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="342" y="878.3198">value</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="374" y="878.3198">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="342" y="891.1245">smtp_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="406" y="891.1245">?bigint(20)</text><!--MD5=[1f6f26372a3559e571c85e85571a0402]
+class imap--><rect codeLine="91" fill="#FFFFFF" height="219.2656" id="imap" style="stroke:#FF0066;stroke-width:1.5;" width="346" x="452" y="13.5"/><ellipse cx="605.75" cy="29.5" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M606.5938,36.25 L604.1406,36.25 L604.1406,26 L601,26 L601,23.8594 L609.7344,23.8594 L609.7344,26 L606.5938,26 L606.5938,36.25 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="30" x="626.25" y="33.6543">imap</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="453" x2="797" y1="45.5" y2="45.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="458" y="59.7104">user_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="714" y="59.7104">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="458" y="72.5151">host</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="682" y="72.5151">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="23" x="458" y="85.3198">port</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="682" y="85.3198">?int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="458" y="98.1245">username</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="682" y="98.1245">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="458" y="110.9292">password</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="682" y="110.9292">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="458" y="123.7339">modified_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="682" y="123.7339">?datetime</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="458" y="136.5386">tls</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="714" y="136.5386">?tinyint(1)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="458" y="149.3433">enabled</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="714" y="149.3433">?tinyint(1)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="458" y="162.1479">folder</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="714" y="162.1479">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="458" y="174.9526">restrict_domain</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="682" y="174.9526">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="188" x="458" y="187.7573">delete_reported_campaign_email</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="650" y="187.7573">?tinyint(1)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="54" x="458" y="200.562">last_login</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="682" y="200.562">?datetime</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="458" y="213.3667">imap_freq</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="682" y="213.3667">?int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="106" x="458" y="226.1714">ignore_cert_errors</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="682" y="226.1714">?tinyint(1)</text><path d="M833,88 L833,96.5664 L760,94.3164 L833,104.5664 L833,113.1328 A0,0 0 0 0 833,113.1328 L987,113.1328 A0,0 0 0 0 987,113.1328 L987,98 L977,88 L833,88 A0,0 0 0 0 833,88 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M977,88 L977,98 L987,98 L977,88 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="839" y="105.0669">SENSITIVE(UNUSED)</text><path d="M833,123.1328 L833,131.6992 L760,107.1211 L833,139.6992 L833,148.2656 A0,0 0 0 0 833,148.2656 L987,148.2656 A0,0 0 0 0 987,148.2656 L987,133.1328 L977,123.1328 L833,123.1328 A0,0 0 0 0 833,123.1328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M977,123.1328 L977,133.1328 L987,133.1328 L977,123.1328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="839" y="140.1997">SENSITIVE(UNUSED)</text><!--MD5=[950e64d27ce9c4a8a450f529b9d4e71f]
+class mail_logs--><rect codeLine="116" fill="#FFFFFF" height="129.6328" id="mail_logs" style="stroke:#FF0066;stroke-width:1.5;" width="200" x="525" y="787"/><ellipse cx="592.25" cy="803" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M593.0938,809.75 L590.6406,809.75 L590.6406,799.5 L587.5,799.5 L587.5,797.3594 L596.2344,797.3594 L596.2344,799.5 L593.0938,799.5 L593.0938,809.75 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="57" x="612.75" y="807.1543">mail_logs</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="526" x2="724" y1="819" y2="819"/><ellipse cx="536" cy="830" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="545" y="833.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="673" y="833.2104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="71" x="545" y="846.0151">campaign_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="673" y="846.0151">?int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="545" y="858.8198">user_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="673" y="858.8198">?int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="545" y="871.6245">send_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="641" y="871.6245">?datetime</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="545" y="884.4292">send_attempt</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="641" y="884.4292">?int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="545" y="897.2339">r_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="641" y="897.2339">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="63" x="545" y="910.0386">processing</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="641" y="910.0386">?tinyint(1)</text><!--MD5=[7bfd489e1caa6d347f5d080894244435]
+class pages--><rect codeLine="126" fill="#FFFFFF" height="142.4375" id="pages" style="stroke:#FF0066;stroke-width:1.5;" width="264" x="760" y="781"/><ellipse cx="868.25" cy="797" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M869.0938,803.75 L866.6406,803.75 L866.6406,793.5 L863.5,793.5 L863.5,791.3594 L872.2344,791.3594 L872.2344,793.5 L869.0938,793.5 L869.0938,803.75 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="888.75" y="801.1543">pages</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="761" x2="1023" y1="813" y2="813"/><ellipse cx="771" cy="824" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="780" y="827.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="940" y="827.2104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="780" y="840.0151">user_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="940" y="840.0151">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="32" x="780" y="852.8198">name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="940" y="852.8198">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="780" y="865.6245">html</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="908" y="865.6245">?mediumtext</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="780" y="878.4292">modified_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="908" y="878.4292">?datetime</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="780" y="891.2339">capture_credentials</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="908" y="891.2339">?tinyint(1)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="780" y="904.0386">capture_passwords</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="908" y="904.0386">?tinyint(1)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="65" x="780" y="916.8433">redirect_url</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="908" y="916.8433">?text</text><!--MD5=[869041b9f126192a8a6d0baf49239fc2]
+class permissions--><rect codeLine="137" fill="#FFFFFF" height="91.2188" id="permissions" style="stroke:#FF0066;stroke-width:1.5;" width="194" x="1059" y="806.5"/><ellipse cx="1114.25" cy="822.5" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M1115.0938,829.25 L1112.6406,829.25 L1112.6406,819 L1109.5,819 L1109.5,816.8594 L1118.2344,816.8594 L1118.2344,819 L1115.0938,819 L1115.0938,829.25 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="75" x="1134.75" y="826.6543">permissions</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="1060" x2="1252" y1="838.5" y2="838.5"/><ellipse cx="1070" cy="849.5" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="1079" y="852.7104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="1175" y="852.7104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="24" x="1079" y="865.5151">slug</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="1143" y="865.5151">varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="32" x="1079" y="878.3198">name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="1175" y="878.3198">varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="63" x="1079" y="891.1245">description</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1143" y="891.1245">?varchar(255)</text><!--MD5=[12959464fb9c6f6f3bb71ca2a5097ae7]
+class results--><rect codeLine="144" fill="#FFFFFF" height="232.0703" id="results" style="stroke:#FF0066;stroke-width:1.5;" width="232" x="1022" y="7"/><ellipse cx="1112.25" cy="23" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M1113.0938,29.75 L1110.6406,29.75 L1110.6406,19.5 L1107.5,19.5 L1107.5,17.3594 L1116.2344,17.3594 L1116.2344,19.5 L1113.0938,19.5 L1113.0938,29.75 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43" x="1132.75" y="27.1543">results</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="1023" x2="1253" y1="39" y2="39"/><ellipse cx="1033" cy="50" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="1042" y="53.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="1170" y="53.2104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="71" x="1042" y="66.0151">campaign_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="1170" y="66.0151">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="1042" y="78.8198">user_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="1170" y="78.8198">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="1042" y="91.6245">r_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1138" y="91.6245">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="1042" y="104.4292">email</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1138" y="104.4292">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="1042" y="117.2339">first_name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1138" y="117.2339">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="1042" y="130.0386">last_name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1138" y="130.0386">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="1042" y="142.8433">status</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="1170" y="142.8433">varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="1042" y="155.6479">ip</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1170" y="155.6479">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="1042" y="168.4526">latitude</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="1138" y="168.4526">?double</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="52" x="1042" y="181.2573">longitude</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="1138" y="181.2573">?double</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="1042" y="194.062">position</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1138" y="194.062">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="1042" y="206.8667">send_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="1138" y="206.8667">?datetime</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="1042" y="219.6714">reported</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="1138" y="219.6714">?tinyint(1)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="1042" y="232.4761">modified_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="1138" y="232.4761">?datetime</text><path d="M1289.5,17.5 L1289.5,26.0664 L1216,100.6211 L1289.5,34.0664 L1289.5,42.6328 A0,0 0 0 0 1289.5,42.6328 L1398.5,42.6328 A0,0 0 0 0 1398.5,42.6328 L1398.5,27.5 L1388.5,17.5 L1289.5,17.5 A0,0 0 0 0 1289.5,17.5 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1388.5,17.5 L1388.5,27.5 L1398.5,27.5 L1388.5,17.5 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="1295.5" y="34.5669">PII_EMPLOYEE</text><path d="M1289.5,52.6328 L1289.5,61.1992 L1216,113.4258 L1289.5,69.1992 L1289.5,77.7656 A0,0 0 0 0 1289.5,77.7656 L1398.5,77.7656 A0,0 0 0 0 1398.5,77.7656 L1398.5,62.6328 L1388.5,52.6328 L1289.5,52.6328 A0,0 0 0 0 1289.5,52.6328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1388.5,52.6328 L1388.5,62.6328 L1398.5,62.6328 L1388.5,52.6328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="1295.5" y="69.6997">PII_EMPLOYEE</text><path d="M1289.5,87.7656 L1289.5,96.332 L1216,126.2305 L1289.5,104.332 L1289.5,112.8984 A0,0 0 0 0 1289.5,112.8984 L1398.5,112.8984 A0,0 0 0 0 1398.5,112.8984 L1398.5,97.7656 L1388.5,87.7656 L1289.5,87.7656 A0,0 0 0 0 1289.5,87.7656 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1388.5,87.7656 L1388.5,97.7656 L1398.5,97.7656 L1388.5,87.7656 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="1295.5" y="104.8325">PII_EMPLOYEE</text><path d="M1289.5,122.8984 L1289.5,131.4648 L1248,151.8398 L1289.5,139.4648 L1289.5,148.0313 A0,0 0 0 0 1289.5,148.0313 L1398.5,148.0313 A0,0 0 0 0 1398.5,148.0313 L1398.5,132.8984 L1388.5,122.8984 L1289.5,122.8984 A0,0 0 0 0 1289.5,122.8984 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1388.5,122.8984 L1388.5,132.8984 L1398.5,132.8984 L1388.5,122.8984 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="1295.5" y="139.9653">PII_EMPLOYEE</text><path d="M1289.5,158.0313 L1289.5,166.5977 L1182,164.6445 L1289.5,174.5977 L1289.5,183.1641 A0,0 0 0 0 1289.5,183.1641 L1398.5,183.1641 A0,0 0 0 0 1398.5,183.1641 L1398.5,168.0313 L1388.5,158.0313 L1289.5,158.0313 A0,0 0 0 0 1289.5,158.0313 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1388.5,158.0313 L1388.5,168.0313 L1398.5,168.0313 L1388.5,158.0313 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="1295.5" y="175.0981">PII_EMPLOYEE</text><path d="M1289.5,193.1641 L1289.5,201.7305 L1182,177.4492 L1289.5,209.7305 L1289.5,218.2969 A0,0 0 0 0 1289.5,218.2969 L1398.5,218.2969 A0,0 0 0 0 1398.5,218.2969 L1398.5,203.1641 L1388.5,193.1641 L1289.5,193.1641 A0,0 0 0 0 1289.5,193.1641 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1388.5,193.1641 L1388.5,203.1641 L1398.5,203.1641 L1388.5,193.1641 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="1295.5" y="210.231">PII_EMPLOYEE</text><!--MD5=[3a7d34128599fe02eae054640f95f951]
+class role_permissions--><rect codeLine="186" fill="#FFFFFF" height="65.6094" id="role_permissions" style="stroke:#FF0066;stroke-width:1.5;" width="176" x="193" y="1015"/><ellipse cx="225.55" cy="1031" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M226.3938,1037.75 L223.9406,1037.75 L223.9406,1027.5 L220.8,1027.5 L220.8,1025.3594 L229.5344,1025.3594 L229.5344,1027.5 L226.3938,1027.5 L226.3938,1037.75 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="105" x="243.45" y="1035.1543">role_permissions</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="194" x2="368" y1="1047" y2="1047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="38" x="199" y="1061.2104">role_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="327" y="1061.2104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="199" y="1074.0151">permission_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="295" y="1074.0151">int(11)</text><!--MD5=[49762a54e1b04ffe7db6f74326b29b36]
+class roles--><rect codeLine="191" fill="#FFFFFF" height="91.2188" id="roles" style="stroke:#FF0066;stroke-width:1.5;" width="194" x="404" y="1002.5"/><ellipse cx="481.25" cy="1018.5" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M482.0938,1025.25 L479.6406,1025.25 L479.6406,1015 L476.5,1015 L476.5,1012.8594 L485.2344,1012.8594 L485.2344,1015 L482.0938,1015 L482.0938,1025.25 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="31" x="501.75" y="1022.6543">roles</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="405" x2="597" y1="1034.5" y2="1034.5"/><ellipse cx="415" cy="1045.5" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="424" y="1048.7104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="520" y="1048.7104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="24" x="424" y="1061.5151">slug</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="488" y="1061.5151">varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="32" x="424" y="1074.3198">name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="520" y="1074.3198">varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="63" x="424" y="1087.1245">description</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="488" y="1087.1245">?varchar(255)</text><!--MD5=[1cd3c6ccec8d514f4e77773df0b6a6a6]
+class smtp--><rect codeLine="198" fill="#FFFFFF" height="168.0469" id="smtp" style="stroke:#FF0066;stroke-width:1.5;" width="264" x="34" y="299"/><ellipse cx="146.25" cy="315" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M147.0938,321.75 L144.6406,321.75 L144.6406,311.5 L141.5,311.5 L141.5,309.3594 L150.2344,309.3594 L150.2344,311.5 L147.0938,311.5 L147.0938,321.75 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="31" x="166.75" y="319.1543">smtp</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="35" x2="297" y1="331" y2="331"/><ellipse cx="45" cy="342" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="54" y="345.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="214" y="345.2104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="54" y="358.0151">user_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="214" y="358.0151">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="54" y="370.8198">interface_type</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="182" y="370.8198">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="32" x="54" y="383.6245">name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="214" y="383.6245">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="54" y="396.4292">host</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="182" y="396.4292">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="54" y="409.2339">username</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="182" y="409.2339">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="54" y="422.0386">password</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="182" y="422.0386">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="54" y="434.8433">from_address</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="182" y="434.8433">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="54" y="447.6479">modified_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="182" y="447.6479">?datetime</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="106" x="54" y="460.4526">ignore_cert_errors</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="182" y="460.4526">?tinyint(1)</text><path d="M333.5,348 L333.5,356.5664 L260,405.4258 L333.5,364.5664 L333.5,373.1328 A0,0 0 0 0 333.5,373.1328 L494.5,373.1328 A0,0 0 0 0 494.5,373.1328 L494.5,358 L484.5,348 L333.5,348 A0,0 0 0 0 333.5,348 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M484.5,348 L484.5,358 L494.5,358 L484.5,348 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="339.5" y="365.0669">SENSITIVE(OPTIONAL)</text><path d="M333.5,383.1328 L333.5,391.6992 L260,418.2305 L333.5,399.6992 L333.5,408.2656 A0,0 0 0 0 333.5,408.2656 L494.5,408.2656 A0,0 0 0 0 494.5,408.2656 L494.5,393.1328 L484.5,383.1328 L333.5,383.1328 A0,0 0 0 0 333.5,383.1328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M484.5,383.1328 L484.5,393.1328 L494.5,393.1328 L484.5,383.1328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="339.5" y="400.1997">SENSITIVE(OPTIONAL)</text><!--MD5=[cdf693a1672fe4548eb7de0fa30893da]
+class targets--><rect codeLine="219" fill="#FFFFFF" height="104.0234" id="targets" style="stroke:#FF0066;stroke-width:1.5;" width="168" x="541" y="331"/><ellipse cx="597.75" cy="347" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M598.5938,353.75 L596.1406,353.75 L596.1406,343.5 L593,343.5 L593,341.3594 L601.7344,341.3594 L601.7344,343.5 L598.5938,343.5 L598.5938,353.75 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="46" x="618.25" y="351.1543">targets</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="542" x2="708" y1="363" y2="363"/><ellipse cx="552" cy="374" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="561" y="377.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="657" y="377.2104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="561" y="390.0151">first_name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="625" y="390.0151">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="561" y="402.8198">last_name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="625" y="402.8198">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="561" y="415.6245">email</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="625" y="415.6245">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="561" y="428.4292">position</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="625" y="428.4292">?varchar(255)</text><path d="M744.5,312.5 L744.5,321.0664 L703,386.207 L744.5,329.0664 L744.5,337.6328 A0,0 0 0 0 744.5,337.6328 L927.5,337.6328 A0,0 0 0 0 927.5,337.6328 L927.5,322.5 L917.5,312.5 L744.5,312.5 A0,0 0 0 0 744.5,312.5 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M917.5,312.5 L917.5,322.5 L927.5,322.5 L917.5,312.5 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162" x="750.5" y="329.5669">PII_EMPLOYEE(OPTIONAL)</text><path d="M744.5,347.6328 L744.5,356.1992 L703,399.0117 L744.5,364.1992 L744.5,372.7656 A0,0 0 0 0 744.5,372.7656 L927.5,372.7656 A0,0 0 0 0 927.5,372.7656 L927.5,357.6328 L917.5,347.6328 L744.5,347.6328 A0,0 0 0 0 744.5,347.6328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M917.5,347.6328 L917.5,357.6328 L927.5,357.6328 L917.5,347.6328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162" x="750.5" y="364.6997">PII_EMPLOYEE(OPTIONAL)</text><path d="M744.5,382.7656 L744.5,391.332 L703,411.8164 L744.5,399.332 L744.5,407.8984 A0,0 0 0 0 744.5,407.8984 L853.5,407.8984 A0,0 0 0 0 853.5,407.8984 L853.5,392.7656 L843.5,382.7656 L744.5,382.7656 A0,0 0 0 0 744.5,382.7656 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M843.5,382.7656 L843.5,392.7656 L853.5,392.7656 L843.5,382.7656 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="750.5" y="399.8325">PII_EMPLOYEE</text><path d="M744.5,417.8984 L744.5,426.4648 L703,424.6211 L744.5,434.4648 L744.5,443.0313 A0,0 0 0 0 744.5,443.0313 L927.5,443.0313 A0,0 0 0 0 927.5,443.0313 L927.5,427.8984 L917.5,417.8984 L744.5,417.8984 A0,0 0 0 0 744.5,417.8984 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M917.5,417.8984 L917.5,427.8984 L927.5,427.8984 L917.5,417.8984 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162" x="750.5" y="434.9653">PII_EMPLOYEE(OPTIONAL)</text><!--MD5=[51f5d6cb42679dedca481107ab854aab]
+class templates--><rect codeLine="243" fill="#FFFFFF" height="129.6328" id="templates" style="stroke:#FF0066;stroke-width:1.5;" width="232" x="633" y="983"/><ellipse cx="713.25" cy="999" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M714.0938,1005.75 L711.6406,1005.75 L711.6406,995.5 L708.5,995.5 L708.5,993.3594 L717.2344,993.3594 L717.2344,995.5 L714.0938,995.5 L714.0938,1005.75 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="63" x="733.75" y="1003.1543">templates</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="634" x2="864" y1="1015" y2="1015"/><ellipse cx="644" cy="1026" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="653" y="1029.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="781" y="1029.2104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="653" y="1042.0151">user_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="781" y="1042.0151">?bigint(20)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="32" x="653" y="1054.8198">name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="781" y="1054.8198">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="41" x="653" y="1067.6245">subject</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="781" y="1067.6245">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="653" y="1080.4292">text</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="749" y="1080.4292">?text</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="653" y="1093.2339">html</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="749" y="1093.2339">?mediumtext</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="653" y="1106.0386">modified_date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="749" y="1106.0386">?datetime</text><!--MD5=[8413f8248b2da7966d2de021109ec289]
+class users--><rect codeLine="253" fill="#FFFFFF" height="116.8281" id="users" style="stroke:#FF0066;stroke-width:1.5;" width="322" x="977" y="324.5"/><ellipse cx="1116.25" cy="340.5" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M1117.0938,347.25 L1114.6406,347.25 L1114.6406,337 L1111.5,337 L1111.5,334.8594 L1120.2344,334.8594 L1120.2344,337 L1117.0938,337 L1117.0938,347.25 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="35" x="1136.75" y="344.6543">users</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="978" x2="1298" y1="356.5" y2="356.5"/><ellipse cx="988" cy="367.5" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="997" y="370.7104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="1221" y="370.7104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="997" y="383.5151">username</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="1189" y="383.5151">varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="28" x="997" y="396.3198">hash</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1189" y="396.3198">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="997" y="409.1245">api_key</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="1221" y="409.1245">varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="38" x="997" y="421.9292">role_id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="1221" y="421.9292">?int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="157" x="997" y="434.7339">password_change_required</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="1157" y="434.7339">?tinyint(1)</text><path d="M1334.5,330.5 L1334.5,339.0664 L1261,379.707 L1334.5,347.0664 L1334.5,355.6328 A0,0 0 0 0 1334.5,355.6328 L1421.5,355.6328 A0,0 0 0 0 1421.5,355.6328 L1421.5,340.5 L1411.5,330.5 L1334.5,330.5 A0,0 0 0 0 1334.5,330.5 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1411.5,330.5 L1411.5,340.5 L1421.5,340.5 L1411.5,330.5 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66" x="1340.5" y="347.5669">SENSITIVE</text><path d="M1334.5,365.6328 L1334.5,374.1992 L1267,392.5117 L1334.5,382.1992 L1334.5,390.7656 A0,0 0 0 0 1334.5,390.7656 L1421.5,390.7656 A0,0 0 0 0 1421.5,390.7656 L1421.5,375.6328 L1411.5,365.6328 L1334.5,365.6328 A0,0 0 0 0 1334.5,365.6328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1411.5,365.6328 L1411.5,375.6328 L1421.5,375.6328 L1411.5,365.6328 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66" x="1340.5" y="382.6997">SENSITIVE</text><path d="M1334.5,400.7656 L1334.5,409.332 L1293,405.3164 L1334.5,417.332 L1334.5,425.8984 A0,0 0 0 0 1334.5,425.8984 L1421.5,425.8984 A0,0 0 0 0 1421.5,425.8984 L1421.5,410.7656 L1411.5,400.7656 L1334.5,400.7656 A0,0 0 0 0 1334.5,400.7656 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1411.5,400.7656 L1411.5,410.7656 L1421.5,410.7656 L1411.5,400.7656 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66" x="1340.5" y="417.8325">SENSITIVE</text><!--MD5=[a78f8ab8889532541df600c48c70cfd3]
+class webhooks--><rect codeLine="274" fill="#FFFFFF" height="104.0234" id="webhooks" style="stroke:#FF0066;stroke-width:1.5;" width="207" x="900.5" y="996"/><ellipse cx="968.25" cy="1012" fill="#FFEBF3" rx="11" ry="11" style="stroke:#FF0066;stroke-width:1.0;"/><path d="M969.0938,1018.75 L966.6406,1018.75 L966.6406,1008.5 L963.5,1008.5 L963.5,1006.3594 L972.2344,1006.3594 L972.2344,1008.5 L969.0938,1008.5 L969.0938,1018.75 Z " fill="#000000"/><text fill="#3B0018" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="63" x="988.75" y="1016.1543">webhooks</text><line style="stroke:#FF0066;stroke-width:1.5;" x1="901.5" x2="1106.5" y1="1028" y2="1028"/><ellipse cx="911.5" cy="1039" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="10" x="920.5" y="1042.2104">id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="1016.5" y="1042.2104">int(11)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="32" x="920.5" y="1055.0151">name</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1016.5" y="1055.0151">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="15" x="920.5" y="1067.8198">url</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="85" x="1016.5" y="1067.8198">?varchar(1000)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="920.5" y="1080.6245">secret</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1016.5" y="1080.6245">?varchar(255)</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="920.5" y="1093.4292">is_active</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="984.5" y="1093.4292">?tinyint(1)</text><!--MD5=[746fdf4a41c854be143db394a3fbe216]
+link events to events$$$RIGHT--><!--MD5=[545b392e504737e801963306a00d062c]
+link imap to imap$$$RIGHT--><!--MD5=[d225871b28536f17eb00ffcf80ff1687]
+link results to results$$$RIGHT--><!--MD5=[93ac44bfd926cd2defa337e626838192]
+link smtp to smtp$$$RIGHT--><!--MD5=[de1c37bcd56cbdd22d7498282a1f8116]
+link targets to targets$$$RIGHT--><!--MD5=[dc3a72f3d216a3418bc5c6facd723201]
+link users to users$$$RIGHT--><!--MD5=[274b0cee9a1ade1e0ead9cbfded6b25c]
+reverse link events to smtp--><!--MD5=[fe6aabe688004d9d132878e20fa1c2a6]
+reverse link imap to targets--><!--MD5=[2c5799aceedca398922d1ad958745a80]
+reverse link results to users--><!--MD5=[09d58468317dfc8c953b88185760c231]
+reverse link targets to attachments--><!--MD5=[932b36102b1edef894aa8b655fa346eb]
+reverse link targets to campaigns--><!--MD5=[aa978734b9b3d260162dbba557e52aa2]
+reverse link targets to email_requests--><!--MD5=[e9848bc8f6eff9a3e55a1bc61c2c1a1c]
+reverse link targets to goose_db_version--><!--MD5=[63f9d2b02e8f6bc4eba2962af0ce87d3]
+reverse link targets to group_targets--><!--MD5=[6cdda2d1a4f4217d53bc0da1e7bdd1d2]
+reverse link email_requests to groups--><!--MD5=[13f87efd0c0fe74edcd8455e6578cafa]
+reverse link email_requests to headers--><!--MD5=[31b4c89620d6d33268126d68878a3bcf]
+reverse link email_requests to mail_logs--><!--MD5=[3bd20fcfed61f147238922348a968b74]
+reverse link email_requests to pages--><!--MD5=[acd6d96338b1d73b84516fa157577d84]
+reverse link email_requests to permissions--><!--MD5=[f432f32ed95576de8bfea0e7f05a6822]
+reverse link mail_logs to role_permissions--><!--MD5=[3882ac238f6e063b03ee5149f25a2951]
+reverse link mail_logs to roles--><!--MD5=[9b2582249a82af5713850b3465ef384a]
+reverse link mail_logs to templates--><!--MD5=[99ed4285bfb0f9741f902d209fa21758]
+reverse link mail_logs to webhooks--><!--MD5=[07a68b498c533cd6bd7c5d117edfb6b4]
+@startuml
+
+!define table(x) class x << (T,#ffebf3) >>
+hide methods
+hide stereotypes
+skinparam classFontColor #3b0018
+skinparam classArrowColor #ff0066
+skinparam classBorderColor #ff0066
+skinparam classBackgroundColor ##f6f4ee
+skinparam shadowing false
+
+table(attachments) {
+    {field} +id			int(11)
+    {field} template_id	?bigint(20)
+    {field} content		?longtext
+    {field} type		?varchar(255)
+    {field} name		?varchar(255)
+}
+
+table(campaigns) {
+    {field} +id				int(11)
+    {field} user_id			?bigint(20)
+    {field} name			varchar(255)
+    {field} created_date	?datetime
+    {field} completed_date	?datetime
+    {field} template_id		?bigint(20)
+    {field} page_id			?bigint(20)
+    {field} status			?varchar(255)
+    {field} url				?varchar(255)
+    {field} smtp_id			?bigint(20)
+    {field} launch_date		?datetime
+    {field} send_by_date	?datetime
+}
+
+table(email_requests) {
+    {field} +id				int(11)
+    {field} user_id			?int(11)
+    {field} template_id		?int(11)
+    {field} page_id			?int(11)
+    {field} first_name		?varchar(255)
+    {field} last_name		?varchar(255)
+    {field} email			?varchar(255)
+    {field} position		?varchar(255)
+    {field} url				?varchar(255)
+    {field} r_id			?varchar(255)
+    {field} from_address	?varchar(255)
+}
+
+table(events) {
+    {field} +id			int(11)
+    {field} campaign_id	?bigint(20)
+    {field} email		?varchar(255)
+    {field} time		?datetime
+    {field} message		?varchar(255)
+    {field} details		?blob
+}
+
+note right of events::email
+PII_EMPLOYEE
+end note
+
+note right of events::details
+SENSITIVE?(IP)
+end note
+
+table(goose_db_version) {
+    {field} +id			bigint(20) unsigned
+    {field} version_id	bigint(20)
+    {field} is_applied	tinyint(1)
+    {field} tstamp		?timestamp
+}
+
+table(group_targets) {
+    {field} group_id	?bigint(20)
+    {field} target_id	?bigint(20)
+}
+
+table(groups) {
+    {field} +id				int(11)
+    {field} user_id			?bigint(20)
+    {field} name			?varchar(255)
+    {field} modified_date	?datetime
+}
+
+table(headers) {
+    {field} +id		int(11)
+    {field} key		?varchar(255)
+    {field} value	?varchar(255)
+    {field} smtp_id	?bigint(20)
+}
+
+table(imap) {
+    {field} user_id							?bigint(20)
+    {field} host							?varchar(255)
+    {field} port							?int(11)
+    {field} username						?varchar(255)
+    {field} password						?varchar(255)
+    {field} modified_date					?datetime
+    {field} tls								?tinyint(1)
+    {field} enabled							?tinyint(1)
+    {field} folder							?varchar(255)
+    {field} restrict_domain					?varchar(255)
+    {field} delete_reported_campaign_email	?tinyint(1)
+    {field} last_login						?datetime
+    {field} imap_freq						?int(11)
+    {field} ignore_cert_errors				?tinyint(1)
+}
+
+note right of imap::username
+SENSITIVE(UNUSED)
+end note
+
+note right of imap::password
+SENSITIVE(UNUSED)
+end note
+
+table(mail_logs) {
+    {field} +id				int(11)
+    {field} campaign_id		?int(11)
+    {field} user_id			?int(11)
+    {field} send_date		?datetime
+    {field} send_attempt	?int(11)
+    {field} r_id			?varchar(255)
+    {field} processing		?tinyint(1)
+}
+
+table(pages) {
+    {field} +id					int(11)
+    {field} user_id				?bigint(20)
+    {field} name				?varchar(255)
+    {field} html				?mediumtext
+    {field} modified_date		?datetime
+    {field} capture_credentials	?tinyint(1)
+    {field} capture_passwords	?tinyint(1)
+    {field} redirect_url		?text
+}
+
+table(permissions) {
+    {field} +id			int(11)
+    {field} slug		varchar(255)
+    {field} name		varchar(255)
+    {field} description	?varchar(255)
+}
+
+table(results) {
+    {field} +id				int(11)
+    {field} campaign_id		?bigint(20)
+    {field} user_id			?bigint(20)
+    {field} r_id			?varchar(255)
+    {field} email			?varchar(255)
+    {field} first_name		?varchar(255)
+    {field} last_name		?varchar(255)
+    {field} status			varchar(255)
+    {field} ip				?varchar(255)
+    {field} latitude		?double
+    {field} longitude		?double
+    {field} position		?varchar(255)
+    {field} send_date		?datetime
+    {field} reported		?tinyint(1)
+    {field} modified_date	?datetime
+}
+
+note right of results::email
+PII_EMPLOYEE
+end note
+
+note right of results::first_name
+PII_EMPLOYEE
+end note
+
+note right of results::last_name
+PII_EMPLOYEE
+end note
+
+note right of results::ip
+PII_EMPLOYEE
+end note
+
+note right of results::latitude
+PII_EMPLOYEE
+end note
+
+note right of results::longitude
+PII_EMPLOYEE
+end note
+
+table(role_permissions) {
+    {field} role_id			int(11)
+    {field} permission_id	int(11)
+}
+
+table(roles) {
+    {field} +id			int(11)
+    {field} slug		varchar(255)
+    {field} name		varchar(255)
+    {field} description	?varchar(255)
+}
+
+table(smtp) {
+    {field} +id					int(11)
+    {field} user_id				?bigint(20)
+    {field} interface_type		?varchar(255)
+    {field} name				?varchar(255)
+    {field} host				?varchar(255)
+    {field} username			?varchar(255)
+    {field} password			?varchar(255)
+    {field} from_address		?varchar(255)
+    {field} modified_date		?datetime
+    {field} ignore_cert_errors	?tinyint(1)
+}
+
+note right of smtp::username
+SENSITIVE(OPTIONAL)
+end note
+
+note right of smtp::password
+SENSITIVE(OPTIONAL)
+end note
+
+table(targets) {
+    {field} +id			int(11)
+    {field} first_name	?varchar(255)
+    {field} last_name	?varchar(255)
+    {field} email		?varchar(255)
+    {field} position	?varchar(255)
+}
+
+note right of targets::first_name
+PII_EMPLOYEE(OPTIONAL)
+end note
+
+note right of targets::last_name
+PII_EMPLOYEE(OPTIONAL)
+end note
+
+note right of targets::email
+PII_EMPLOYEE
+end note
+
+note right of targets::position
+PII_EMPLOYEE(OPTIONAL)
+end note
+
+table(templates) {
+    {field} +id				int(11)
+    {field} user_id			?bigint(20)
+    {field} name			?varchar(255)
+    {field} subject			?varchar(255)
+    {field} text			?text
+    {field} html			?mediumtext
+    {field} modified_date	?datetime
+}
+
+table(users) {
+    {field} +id							int(11)
+    {field} username					varchar(255)
+    {field} hash						?varchar(255)
+    {field} api_key						varchar(255)
+    {field} role_id						?int(11)
+    {field} password_change_required	?tinyint(1)
+}
+
+note right of users::username
+SENSITIVE
+end note
+
+note right of users::hash
+SENSITIVE
+end note
+
+note right of users::api_key
+SENSITIVE
+end note
+
+table(webhooks) {
+    {field} +id			int(11)
+    {field} name		?varchar(255)
+    {field} url			?varchar(1000)
+    {field} secret		?varchar(255)
+    {field} is_active	?tinyint(1)
+}
+
+' The following directives add hidden vertical connectors between elements to
+' force PlantUML to not create an excessively wide diagram.
+
+events <|-[hidden]- smtp
+imap <|-[hidden]- targets
+results <|-[hidden]- users
+
+targets <|-[hidden]- attachments
+targets <|-[hidden]- campaigns
+targets <|-[hidden]- email_requests
+targets <|-[hidden]- goose_db_version
+targets <|-[hidden]- group_targets
+
+email_requests <|-[hidden]- groups
+email_requests <|-[hidden]- headers
+email_requests <|-[hidden]- mail_logs
+email_requests <|-[hidden]- pages
+email_requests <|-[hidden]- permissions
+
+mail_logs <|-[hidden]- role_permissions
+mail_logs <|-[hidden]- roles
+mail_logs <|-[hidden]- templates
+mail_logs <|-[hidden]- webhooks
+
+@enduml
+
+@startuml
+
+hide methods
+hide stereotypes
+skinparam classFontColor #3b0018
+skinparam classArrowColor #ff0066
+skinparam classBorderColor #ff0066
+skinparam classBackgroundColor ##f6f4ee
+skinparam shadowing false
+
+class attachments << (T,#ffebf3) >> {
+    {field} +id			int(11)
+    {field} template_id	?bigint(20)
+    {field} content		?longtext
+    {field} type		?varchar(255)
+    {field} name		?varchar(255)
+}
+
+class campaigns << (T,#ffebf3) >> {
+    {field} +id				int(11)
+    {field} user_id			?bigint(20)
+    {field} name			varchar(255)
+    {field} created_date	?datetime
+    {field} completed_date	?datetime
+    {field} template_id		?bigint(20)
+    {field} page_id			?bigint(20)
+    {field} status			?varchar(255)
+    {field} url				?varchar(255)
+    {field} smtp_id			?bigint(20)
+    {field} launch_date		?datetime
+    {field} send_by_date	?datetime
+}
+
+class email_requests << (T,#ffebf3) >> {
+    {field} +id				int(11)
+    {field} user_id			?int(11)
+    {field} template_id		?int(11)
+    {field} page_id			?int(11)
+    {field} first_name		?varchar(255)
+    {field} last_name		?varchar(255)
+    {field} email			?varchar(255)
+    {field} position		?varchar(255)
+    {field} url				?varchar(255)
+    {field} r_id			?varchar(255)
+    {field} from_address	?varchar(255)
+}
+
+class events << (T,#ffebf3) >> {
+    {field} +id			int(11)
+    {field} campaign_id	?bigint(20)
+    {field} email		?varchar(255)
+    {field} time		?datetime
+    {field} message		?varchar(255)
+    {field} details		?blob
+}
+
+note right of events::email
+PII_EMPLOYEE
+end note
+
+note right of events::details
+SENSITIVE?(IP)
+end note
+
+class goose_db_version << (T,#ffebf3) >> {
+    {field} +id			bigint(20) unsigned
+    {field} version_id	bigint(20)
+    {field} is_applied	tinyint(1)
+    {field} tstamp		?timestamp
+}
+
+class group_targets << (T,#ffebf3) >> {
+    {field} group_id	?bigint(20)
+    {field} target_id	?bigint(20)
+}
+
+class groups << (T,#ffebf3) >> {
+    {field} +id				int(11)
+    {field} user_id			?bigint(20)
+    {field} name			?varchar(255)
+    {field} modified_date	?datetime
+}
+
+class headers << (T,#ffebf3) >> {
+    {field} +id		int(11)
+    {field} key		?varchar(255)
+    {field} value	?varchar(255)
+    {field} smtp_id	?bigint(20)
+}
+
+class imap << (T,#ffebf3) >> {
+    {field} user_id							?bigint(20)
+    {field} host							?varchar(255)
+    {field} port							?int(11)
+    {field} username						?varchar(255)
+    {field} password						?varchar(255)
+    {field} modified_date					?datetime
+    {field} tls								?tinyint(1)
+    {field} enabled							?tinyint(1)
+    {field} folder							?varchar(255)
+    {field} restrict_domain					?varchar(255)
+    {field} delete_reported_campaign_email	?tinyint(1)
+    {field} last_login						?datetime
+    {field} imap_freq						?int(11)
+    {field} ignore_cert_errors				?tinyint(1)
+}
+
+note right of imap::username
+SENSITIVE(UNUSED)
+end note
+
+note right of imap::password
+SENSITIVE(UNUSED)
+end note
+
+class mail_logs << (T,#ffebf3) >> {
+    {field} +id				int(11)
+    {field} campaign_id		?int(11)
+    {field} user_id			?int(11)
+    {field} send_date		?datetime
+    {field} send_attempt	?int(11)
+    {field} r_id			?varchar(255)
+    {field} processing		?tinyint(1)
+}
+
+class pages << (T,#ffebf3) >> {
+    {field} +id					int(11)
+    {field} user_id				?bigint(20)
+    {field} name				?varchar(255)
+    {field} html				?mediumtext
+    {field} modified_date		?datetime
+    {field} capture_credentials	?tinyint(1)
+    {field} capture_passwords	?tinyint(1)
+    {field} redirect_url		?text
+}
+
+class permissions << (T,#ffebf3) >> {
+    {field} +id			int(11)
+    {field} slug		varchar(255)
+    {field} name		varchar(255)
+    {field} description	?varchar(255)
+}
+
+class results << (T,#ffebf3) >> {
+    {field} +id				int(11)
+    {field} campaign_id		?bigint(20)
+    {field} user_id			?bigint(20)
+    {field} r_id			?varchar(255)
+    {field} email			?varchar(255)
+    {field} first_name		?varchar(255)
+    {field} last_name		?varchar(255)
+    {field} status			varchar(255)
+    {field} ip				?varchar(255)
+    {field} latitude		?double
+    {field} longitude		?double
+    {field} position		?varchar(255)
+    {field} send_date		?datetime
+    {field} reported		?tinyint(1)
+    {field} modified_date	?datetime
+}
+
+note right of results::email
+PII_EMPLOYEE
+end note
+
+note right of results::first_name
+PII_EMPLOYEE
+end note
+
+note right of results::last_name
+PII_EMPLOYEE
+end note
+
+note right of results::ip
+PII_EMPLOYEE
+end note
+
+note right of results::latitude
+PII_EMPLOYEE
+end note
+
+note right of results::longitude
+PII_EMPLOYEE
+end note
+
+class role_permissions << (T,#ffebf3) >> {
+    {field} role_id			int(11)
+    {field} permission_id	int(11)
+}
+
+class roles << (T,#ffebf3) >> {
+    {field} +id			int(11)
+    {field} slug		varchar(255)
+    {field} name		varchar(255)
+    {field} description	?varchar(255)
+}
+
+class smtp << (T,#ffebf3) >> {
+    {field} +id					int(11)
+    {field} user_id				?bigint(20)
+    {field} interface_type		?varchar(255)
+    {field} name				?varchar(255)
+    {field} host				?varchar(255)
+    {field} username			?varchar(255)
+    {field} password			?varchar(255)
+    {field} from_address		?varchar(255)
+    {field} modified_date		?datetime
+    {field} ignore_cert_errors	?tinyint(1)
+}
+
+note right of smtp::username
+SENSITIVE(OPTIONAL)
+end note
+
+note right of smtp::password
+SENSITIVE(OPTIONAL)
+end note
+
+class targets << (T,#ffebf3) >> {
+    {field} +id			int(11)
+    {field} first_name	?varchar(255)
+    {field} last_name	?varchar(255)
+    {field} email		?varchar(255)
+    {field} position	?varchar(255)
+}
+
+note right of targets::first_name
+PII_EMPLOYEE(OPTIONAL)
+end note
+
+note right of targets::last_name
+PII_EMPLOYEE(OPTIONAL)
+end note
+
+note right of targets::email
+PII_EMPLOYEE
+end note
+
+note right of targets::position
+PII_EMPLOYEE(OPTIONAL)
+end note
+
+class templates << (T,#ffebf3) >> {
+    {field} +id				int(11)
+    {field} user_id			?bigint(20)
+    {field} name			?varchar(255)
+    {field} subject			?varchar(255)
+    {field} text			?text
+    {field} html			?mediumtext
+    {field} modified_date	?datetime
+}
+
+class users << (T,#ffebf3) >> {
+    {field} +id							int(11)
+    {field} username					varchar(255)
+    {field} hash						?varchar(255)
+    {field} api_key						varchar(255)
+    {field} role_id						?int(11)
+    {field} password_change_required	?tinyint(1)
+}
+
+note right of users::username
+SENSITIVE
+end note
+
+note right of users::hash
+SENSITIVE
+end note
+
+note right of users::api_key
+SENSITIVE
+end note
+
+class webhooks << (T,#ffebf3) >> {
+    {field} +id			int(11)
+    {field} name		?varchar(255)
+    {field} url			?varchar(1000)
+    {field} secret		?varchar(255)
+    {field} is_active	?tinyint(1)
+}
+
+
+events <|-[hidden]- smtp
+imap <|-[hidden]- targets
+results <|-[hidden]- users
+
+targets <|-[hidden]- attachments
+targets <|-[hidden]- campaigns
+targets <|-[hidden]- email_requests
+targets <|-[hidden]- goose_db_version
+targets <|-[hidden]- group_targets
+
+email_requests <|-[hidden]- groups
+email_requests <|-[hidden]- headers
+email_requests <|-[hidden]- mail_logs
+email_requests <|-[hidden]- pages
+email_requests <|-[hidden]- permissions
+
+mail_logs <|-[hidden]- role_permissions
+mail_logs <|-[hidden]- roles
+mail_logs <|-[hidden]- templates
+mail_logs <|-[hidden]- webhooks
+
+@enduml
+
+PlantUML version 1.2021.5(Sun Apr 25 04:20:28 MST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
