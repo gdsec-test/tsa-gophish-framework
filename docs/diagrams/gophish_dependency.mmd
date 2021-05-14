@@ -1,0 +1,33 @@
+graph RL
+
+    StatusLambda{{"Status Lambda<br/>TIER_4<br/>PUBLIC_CLOUD"}}
+        -- "Verify JWT<br/>Type: SYNC<br/>
+            Routing: SERVER_TO_SERVER_DIRECT_CONNECT<br/>
+            Resiliency: DEGRADE_TO_CACHE>FAIL<br/>RPS: <10<br/>Burst: 100X<br/>
+            Consumers/Day: 1Ks<br/>TLS: YES<br/>Authentication: JWT_USER<br/>
+            Authorization: IP_RESTRICTION"
+        --> SSO("SSO<br/>Tier: TIER_0<br/>Hosted: ON_PREMISE")
+
+    GophishAdmin{{"Gophish Admin Service<br/>TIER_4<br/>PUBLIC_CLOUD"}}
+        -- "Send phishing email (external)<br/>Type: ASYNC<br/>
+            Routing: SERVER_TO_SERVER<br/>
+            Resiliency: BUFFER>FAIL<br/>RPS: <1<br/>Burst: 1000X<br/>
+            Consumers/Day: 1s<br/>TLS: YES<br/>Authentication: SMTP_AUTH<br/>
+            Authorization: RBAC"
+        --> Outlook365("Outlook 365<br/>Tier: TIER_0<br/>Hosted: VENDOR")
+
+    GophishAdmin
+        -- "Send phishing email (internal)<br/>Type: ASYNC<br/>
+            Routing: SERVER_TO_SERVER_DIRECT_CONNECT<br/>
+            Resiliency: BUFFER>FAIL<br/>RPS: <1<br/>Burst: 1000X<br/>
+            Consumers/Day: 1s<br/>TLS: YES<br/>Authentication: SMTP_AUTH<br/>
+            Authorization: RBAC"
+        --> SMTPProxy("SMTP Proxy<br/>Tier: TIER_4<br/>Hosted: ON_PREMISE")
+
+    SMTPProxy
+        -- "Send phishing email (internal)<br/>Type: ASYNC<br/>
+            Routing: SERVER_TO_SERVER<br/>
+            Resiliency: BUFFER>FAIL<br/>RPS: <1<br/>Burst: 1000X<br/>
+            Consumers/Day: 1s<br/>TLS: YES<br/>Authentication: SMTP_AUTH<br/>
+            Authorization: RBAC"
+        --> Outlook365

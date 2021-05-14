@@ -1,0 +1,307 @@
+@startuml
+
+!define table(x) class x << (T,#ffebf3) >>
+hide methods
+hide stereotypes
+skinparam classFontColor #3b0018
+skinparam classArrowColor #ff0066
+skinparam classBorderColor #ff0066
+skinparam classBackgroundColor ##f6f4ee
+skinparam shadowing false
+
+table(attachments) {
+    {field} +id			int(11)
+    {field} template_id	?bigint(20)
+    {field} content		?longtext
+    {field} type		?varchar(255)
+    {field} name		?varchar(255)
+}
+
+table(campaigns) {
+    {field} +id				int(11)
+    {field} user_id			?bigint(20)
+    {field} name			varchar(255)
+    {field} created_date	?datetime
+    {field} completed_date	?datetime
+    {field} template_id		?bigint(20)
+    {field} page_id			?bigint(20)
+    {field} status			?varchar(255)
+    {field} url				?varchar(255)
+    {field} smtp_id			?bigint(20)
+    {field} launch_date		?datetime
+    {field} send_by_date	?datetime
+}
+
+table(email_requests) {
+    {field} +id				int(11)
+    {field} user_id			?int(11)
+    {field} template_id		?int(11)
+    {field} page_id			?int(11)
+    {field} first_name		?varchar(255)
+    {field} last_name		?varchar(255)
+    {field} email			?varchar(255)
+    {field} position		?varchar(255)
+    {field} url				?varchar(255)
+    {field} r_id			?varchar(255)
+    {field} from_address	?varchar(255)
+}
+
+table(events) {
+    {field} +id			int(11)
+    {field} campaign_id	?bigint(20)
+    {field} email		?varchar(255)
+    {field} time		?datetime
+    {field} message		?varchar(255)
+    {field} details		?blob
+}
+
+note right of events::email
+PII_EMPLOYEE
+end note
+
+note right of events::details
+SENSITIVE?(IP)
+end note
+
+table(goose_db_version) {
+    {field} +id			bigint(20) unsigned
+    {field} version_id	bigint(20)
+    {field} is_applied	tinyint(1)
+    {field} tstamp		?timestamp
+}
+
+table(group_targets) {
+    {field} group_id	?bigint(20)
+    {field} target_id	?bigint(20)
+}
+
+table(groups) {
+    {field} +id				int(11)
+    {field} user_id			?bigint(20)
+    {field} name			?varchar(255)
+    {field} modified_date	?datetime
+}
+
+table(headers) {
+    {field} +id		int(11)
+    {field} key		?varchar(255)
+    {field} value	?varchar(255)
+    {field} smtp_id	?bigint(20)
+}
+
+table(imap) {
+    {field} user_id							?bigint(20)
+    {field} host							?varchar(255)
+    {field} port							?int(11)
+    {field} username						?varchar(255)
+    {field} password						?varchar(255)
+    {field} modified_date					?datetime
+    {field} tls								?tinyint(1)
+    {field} enabled							?tinyint(1)
+    {field} folder							?varchar(255)
+    {field} restrict_domain					?varchar(255)
+    {field} delete_reported_campaign_email	?tinyint(1)
+    {field} last_login						?datetime
+    {field} imap_freq						?int(11)
+    {field} ignore_cert_errors				?tinyint(1)
+}
+
+note right of imap::username
+SENSITIVE(UNUSED)
+end note
+
+note right of imap::password
+SENSITIVE(UNUSED)
+end note
+
+table(mail_logs) {
+    {field} +id				int(11)
+    {field} campaign_id		?int(11)
+    {field} user_id			?int(11)
+    {field} send_date		?datetime
+    {field} send_attempt	?int(11)
+    {field} r_id			?varchar(255)
+    {field} processing		?tinyint(1)
+}
+
+table(pages) {
+    {field} +id					int(11)
+    {field} user_id				?bigint(20)
+    {field} name				?varchar(255)
+    {field} html				?mediumtext
+    {field} modified_date		?datetime
+    {field} capture_credentials	?tinyint(1)
+    {field} capture_passwords	?tinyint(1)
+    {field} redirect_url		?text
+}
+
+table(permissions) {
+    {field} +id			int(11)
+    {field} slug		varchar(255)
+    {field} name		varchar(255)
+    {field} description	?varchar(255)
+}
+
+table(results) {
+    {field} +id				int(11)
+    {field} campaign_id		?bigint(20)
+    {field} user_id			?bigint(20)
+    {field} r_id			?varchar(255)
+    {field} email			?varchar(255)
+    {field} first_name		?varchar(255)
+    {field} last_name		?varchar(255)
+    {field} status			varchar(255)
+    {field} ip				?varchar(255)
+    {field} latitude		?double
+    {field} longitude		?double
+    {field} position		?varchar(255)
+    {field} send_date		?datetime
+    {field} reported		?tinyint(1)
+    {field} modified_date	?datetime
+}
+
+note right of results::email
+PII_EMPLOYEE
+end note
+
+note right of results::first_name
+PII_EMPLOYEE
+end note
+
+note right of results::last_name
+PII_EMPLOYEE
+end note
+
+note right of results::ip
+PII_EMPLOYEE
+end note
+
+note right of results::latitude
+PII_EMPLOYEE
+end note
+
+note right of results::longitude
+PII_EMPLOYEE
+end note
+
+table(role_permissions) {
+    {field} role_id			int(11)
+    {field} permission_id	int(11)
+}
+
+table(roles) {
+    {field} +id			int(11)
+    {field} slug		varchar(255)
+    {field} name		varchar(255)
+    {field} description	?varchar(255)
+}
+
+table(smtp) {
+    {field} +id					int(11)
+    {field} user_id				?bigint(20)
+    {field} interface_type		?varchar(255)
+    {field} name				?varchar(255)
+    {field} host				?varchar(255)
+    {field} username			?varchar(255)
+    {field} password			?varchar(255)
+    {field} from_address		?varchar(255)
+    {field} modified_date		?datetime
+    {field} ignore_cert_errors	?tinyint(1)
+}
+
+note right of smtp::username
+SENSITIVE(OPTIONAL)
+end note
+
+note right of smtp::password
+SENSITIVE(OPTIONAL)
+end note
+
+table(targets) {
+    {field} +id			int(11)
+    {field} first_name	?varchar(255)
+    {field} last_name	?varchar(255)
+    {field} email		?varchar(255)
+    {field} position	?varchar(255)
+}
+
+note right of targets::first_name
+PII_EMPLOYEE(OPTIONAL)
+end note
+
+note right of targets::last_name
+PII_EMPLOYEE(OPTIONAL)
+end note
+
+note right of targets::email
+PII_EMPLOYEE
+end note
+
+note right of targets::position
+PII_EMPLOYEE(OPTIONAL)
+end note
+
+table(templates) {
+    {field} +id				int(11)
+    {field} user_id			?bigint(20)
+    {field} name			?varchar(255)
+    {field} subject			?varchar(255)
+    {field} text			?text
+    {field} html			?mediumtext
+    {field} modified_date	?datetime
+}
+
+table(users) {
+    {field} +id							int(11)
+    {field} username					varchar(255)
+    {field} hash						?varchar(255)
+    {field} api_key						varchar(255)
+    {field} role_id						?int(11)
+    {field} password_change_required	?tinyint(1)
+}
+
+note right of users::username
+SENSITIVE
+end note
+
+note right of users::hash
+SENSITIVE
+end note
+
+note right of users::api_key
+SENSITIVE
+end note
+
+table(webhooks) {
+    {field} +id			int(11)
+    {field} name		?varchar(255)
+    {field} url			?varchar(1000)
+    {field} secret		?varchar(255)
+    {field} is_active	?tinyint(1)
+}
+
+' The following directives add hidden vertical connectors between elements to
+' force PlantUML to not create an excessively wide diagram.
+
+events <|-[hidden]- smtp
+imap <|-[hidden]- targets
+results <|-[hidden]- users
+
+targets <|-[hidden]- attachments
+targets <|-[hidden]- campaigns
+targets <|-[hidden]- email_requests
+targets <|-[hidden]- goose_db_version
+targets <|-[hidden]- group_targets
+
+email_requests <|-[hidden]- groups
+email_requests <|-[hidden]- headers
+email_requests <|-[hidden]- mail_logs
+email_requests <|-[hidden]- pages
+email_requests <|-[hidden]- permissions
+
+mail_logs <|-[hidden]- role_permissions
+mail_logs <|-[hidden]- roles
+mail_logs <|-[hidden]- templates
+mail_logs <|-[hidden]- webhooks
+
+@enduml

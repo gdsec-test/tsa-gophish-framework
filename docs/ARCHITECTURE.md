@@ -63,3 +63,23 @@ retrieval of campaign statistics.
 ### Gophish Sequence Diagram
 
 ![Gophish Sequence Diagram](diagrams/gophish_sequence.svg "Gophish Sequence Diagram")
+
+### Gophish Dependency Diagram
+
+![Gophish Dependency Diagram](diagrams/gophish_dependency.svg "Gophish Dependency Diagram")
+
+### Gophish Deployment Diagram
+
+![Gophish Deployment Diagram](diagrams/gophish_deployment.png "Gophish Deployment Diagram")
+
+### Gophish Data Diagram
+
+* The data diagram was produced using a [Database to
+  PlantUML](https://github.com/Hywan/Database-to-PlantUML) utility.
+* The MySQL database created by Gophish does not define foreign key
+  relationships in the DDL, even though the relationships between the tables
+  are obvious when examining the table structures.
+* As this is a third-party product, some usage metrics and patterns have not
+  yet been evaluated.
+
+![Gophish Data Diagram](diagrams/gophish_data.svg "Gophish Data Diagram")

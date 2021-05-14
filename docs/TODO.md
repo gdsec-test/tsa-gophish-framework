@@ -6,8 +6,6 @@
 
 ### Project
 
-* GitHub repository (gdcorp-infosec) w/ permissions
-* Tartufo configuration
 * Cloud Readiness Review
 * CICD - GitHub Actions
   - Infrastructure / Sceptre
@@ -26,7 +24,6 @@
 * Container/ECS scaling configuration
 * Container rotation
 * Adjust healthcheck intervals
-* Unit test(s) (status lambda)
 
 ### Future
 
