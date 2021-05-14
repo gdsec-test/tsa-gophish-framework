@@ -67,3 +67,7 @@ retrieval of campaign statistics.
 ### Gophish Dependency Diagram
 
 ![Gophish Dependency Diagram](diagrams/gophish_dependency.svg "Gophish Dependency Diagram")
+
+### Gophish Deployment Diagram
+
+![Gophish Deployment Diagram](diagrams/gophish_deployment.png "Gophish Deployment Diagram")
