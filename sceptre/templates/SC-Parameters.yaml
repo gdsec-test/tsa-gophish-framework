@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: PhishFramework SSM Parameters
+
+Parameters:
+  GophishAPIUrl:
+    Type: String
+    Description: Gophish API URL
+    Default: ""
+
+Resources:
+  GophishAPIUrlParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: /Gophish/API/Url
+      Type: String
+      Value: !Ref GophishAPIUrl

@@ -1,0 +1,64 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: PhishFramework IAM Policies
+
+Resources:
+  SecretsManagerAdminPolicy:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: IAMPolicy
+      ProvisioningArtifactName: 1.0.0
+      ProvisionedProductName: SecretsManagerAdminPolicy
+      ProvisioningParameters:
+        - Key: PolicyNameSuffix
+          Value: SecretsManagerAdminPolicy
+        - Key: PolicyJSON
+          Value: !Sub '{
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Action": [
+                        "secretsmanager:CreateSecret",
+                        "secretsmanager:PutSecretValue"
+                    ],
+                    "Resource": "arn:aws:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:GophishAPI*"
+                },
+                {
+                    "Effect": "Allow",
+                    "Action": "secretsmanager:GetSecretValue",
+                    "Resource": "arn:aws:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:gophish*"
+                }
+            ]
+          }'
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  SecretsManagerUserPolicy:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: IAMPolicy
+      ProvisioningArtifactName: 1.0.0
+      ProvisionedProductName: SecretsManagerUserPolicy
+      ProvisioningParameters:
+        - Key: PolicyNameSuffix
+          Value: SecretsManagerUserPolicy
+        - Key: PolicyJSON
+          Value: !Sub '{
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Action": "secretsmanager:GetSecretValue",
+                    "Resource": "arn:aws:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:GophishAPI*"
+                },
+                {
+                    "Effect": "Allow",
+                    "Action": "secretsmanager:GetSecretValue",
+                    "Resource": "arn:aws:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:GophishDBUserCredentials*"
+                }
+            ]
+          }'
+      Tags:
+        - Key: doNotShutDown
+          Value: true

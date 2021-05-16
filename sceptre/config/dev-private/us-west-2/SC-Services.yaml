@@ -1,0 +1,20 @@
+template_path: SC-Services.yaml
+dependencies:
+  - {{environment}}/{{region}}/SC-Clusters.yaml
+  - {{environment}}/{{region}}/SC-Database.yaml
+  - {{environment}}/{{region}}/SC-Lambdas.yaml
+  - {{environment}}/{{region}}/SC-Parameters.yaml
+  - {{environment}}/{{region}}/SC-Repositories.yaml
+  - {{environment}}/{{region}}/SC-WAFv2Regional.yaml
+parameters:
+  GophishCertificateId: {{gophish_certificate_id}}
+  LandingCertificateId: {{landing_certificate_id}}
+hooks:
+  before_create:
+    - !cmd aws lambda invoke --function-name preconfig /dev/null
+  before_update:
+    - !cmd aws lambda invoke --function-name preconfig /dev/null
+  after_create:
+    - !cmd aws lambda invoke --function-name postconfig /dev/null
+  after_update:
+    - !cmd aws lambda invoke --function-name postconfig /dev/null

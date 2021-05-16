@@ -128,12 +128,22 @@ environment):
 ```
 cd sceptre
 
-# Deploy Gophish admin infrastructure
-sceptre launch dev-private/us-west-2/SC-CoreResources.yaml
+# Create ECR repository
+sceptre launch dev-private/us-west-2/SC-Repositories.yaml
 
-# Verify Gophish admin page is available
+# Build gophish container
+pushd ../containers/gophish/
+aws ecr get-login-password --region us-west-2 | sudo docker login --username AWS --password-stdin 764525110978.dkr.ecr.us-west-2.amazonaws.com
+sudo docker build --pull -t gophish .
 
-# Deploy Gophish status page
+# Upload gophish container
+AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+aws ecr get-login-password --region us-west-2 | sudo docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.us-west-2.amazonaws.com
+sudo docker tag gophish:latest ${AWS_ACCOUNT_ID}.dkr.ecr.us-west-2.amazonaws.com/gophish:latest
+sudo docker push ${AWS_ACCOUNT_ID}.dkr.ecr.us-west-2.amazonaws.com/gophish:latest
+popd
+
+# Deploy remaining Gophish infrastructure
 sceptre launch dev-private/us-west-2
 ```
 
