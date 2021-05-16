@@ -51,6 +51,9 @@ jobs:
 
       - name: Run sceptre
         run: |
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${SECURESERVER_ACCESS_KEY}"
           source venv/bin/activate
           cd sceptre
           sceptre launch -y dev-private/us-west-2
+          ssh-agent -k
