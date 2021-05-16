@@ -62,7 +62,7 @@ Resources:
         - Key: DesiredContainers
           Value: 1
         - Key: ContainerProtocol
-          Value: HTTP
+          Value: HTTPS
         - Key: AccessLogsEnabled
           Value: true
       Tags:
@@ -91,7 +91,7 @@ Resources:
         - Key: Memory
           Value: 2GB
         - Key: ContainerPort
-          Value: 8080
+          Value: 8443
         - Key: HealthCheckPath
           Value: /static/healthcheck.html
         - Key: ClusterName
@@ -111,7 +111,7 @@ Resources:
         - Key: DesiredContainers
           Value: 1
         - Key: ContainerProtocol
-          Value: HTTP
+          Value: HTTPS
         - Key: AccessLogsEnabled
           Value: true
       Tags:
