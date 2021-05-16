@@ -24,6 +24,6 @@ COPY run.py .
 
 RUN mkdir -p static/endpoint && echo "OK" > static/endpoint/healthcheck.html
 
-EXPOSE 3333 8080
+EXPOSE 3333 8443
 
 CMD ["./run.py"]

@@ -22,7 +22,7 @@ sudo docker run --rm -it gophish /bin/bash
 
 ```
 # Run the docker container:
-sudo docker run -d -p 3333:3333 -p 8080:8080 --name gophish gophish
+sudo docker run -d -p 3333:3333 -p 8443:8443 --name gophish gophish
 
 # Get logs to see admin password:
 sudo docker logs gophish

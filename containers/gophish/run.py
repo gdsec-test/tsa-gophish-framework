@@ -15,8 +15,18 @@ logging_handler.setFormatter(logging_formatter)
 log.addHandler(logging_handler)
 
 gophish_config = {
-    "admin_server": {"listen_url": "0.0.0.0:3333", "use_tls": False},
-    "phish_server": {"listen_url": "0.0.0.0:8080", "use_tls": False},
+    "admin_server": {
+        "listen_url": "0.0.0.0:3333",
+        "use_tls": True,
+        "cert_path": "gophish_admin.crt",
+        "key_path": "gophish_admin.key",
+    },
+    "phish_server": {
+        "listen_url": "0.0.0.0:8443",
+        "use_tls": True,
+        "cert_path": "gophish_landing.crt",
+        "key_path": "gophish_landing.key",
+    },
     "migrations_prefix": "db/db_",
     "contact_address": "DL_TSA@godaddy.com",
     "logging": {"filename": "", "level": ""},
