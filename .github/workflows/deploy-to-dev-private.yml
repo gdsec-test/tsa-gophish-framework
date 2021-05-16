@@ -50,7 +50,13 @@ jobs:
           aws-region: us-west-2
 
       - name: Run sceptre
+        env:
+          SECURESERVER_ACCESS_KEY: ${{ secrets.SECURESERVER_ACCESS_KEY }}
+          GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
         run: |
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${SECURESERVER_ACCESS_KEY}"
           source venv/bin/activate
           cd sceptre
           sceptre launch -y dev-private/us-west-2
+          ssh-agent -k
