@@ -1,0 +1,103 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: PhishFramework IAM Roles
+
+Parameters:
+  DevelopmentTeam:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: SSM Parameter for team owning the created resources.
+    Default: /AdminParams/Team/Name
+    AllowedValues:
+      - /AdminParams/Team/Name
+
+Resources:
+  GophishTaskRole:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: IAMRole
+      ProvisioningArtifactName: 1.0.10
+      ProvisionedProductName: GophishTaskRole
+      ProvisioningParameters:
+        - Key: RoleNameSuffix
+          Value: TaskRole
+        - Key: ManagedPolicyArns
+          Value: !Join
+            - ","
+            -
+              - arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess
+              - arn:aws:iam::aws:policy/CloudWatchLogsFullAccess
+              - !Sub arn:aws:iam::${AWS::AccountId}:policy/${DevelopmentTeam}-custom-SecretsManagerUserPolicy
+        - Key: AssumingServices
+          Value: ecs-tasks.amazonaws.com
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  GophishTaskExecutionRole:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: IAMRole
+      ProvisioningArtifactName: 1.0.10
+      ProvisionedProductName: GophishTaskExecutionRole
+      ProvisioningParameters:
+        - Key: RoleNameSuffix
+          Value: TaskExecutionRole
+        - Key: ManagedPolicyArns
+          Value: !Join
+            - ","
+            -
+              - arn:aws:iam::aws:policy/CloudWatchLogsFullAccess
+              - arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
+        - Key: AssumingServices
+          Value: ecs-tasks.amazonaws.com
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  ConfigRole:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: IAMRole
+      ProvisioningArtifactName: 1.0.10
+      ProvisionedProductName: ConfigRole
+      ProvisioningParameters:
+        - Key: RoleNameSuffix
+          Value: ConfigRole
+        - Key: ManagedPolicyArns
+          Value: !Join
+            - ","
+            -
+              - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+              - arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
+              - arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess
+              - arn:aws:iam::aws:policy/CloudWatchLogsFullAccess
+              - !Sub arn:aws:iam::${AWS::AccountId}:policy/${DevelopmentTeam}-custom-SecretsManagerAdminPolicy
+              - !Sub arn:aws:iam::${AWS::AccountId}:policy/${DevelopmentTeam}-custom-SecretsManagerUserPolicy
+        - Key: AssumingServices
+          Value: lambda.amazonaws.com
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  StatusRole:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: IAMRole
+      ProvisioningArtifactName: 1.0.10
+      ProvisionedProductName: StatusRole
+      ProvisioningParameters:
+        - Key: RoleNameSuffix
+          Value: StatusRole
+        - Key: ManagedPolicyArns
+          Value: !Join
+            - ","
+            -
+              - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+              - arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
+              - arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess
+              - arn:aws:iam::aws:policy/CloudWatchLogsFullAccess
+              - !Sub arn:aws:iam::${AWS::AccountId}:policy/${DevelopmentTeam}-custom-SecretsManagerUserPolicy
+        - Key: AssumingServices
+          Value: lambda.amazonaws.com
+      Tags:
+        - Key: doNotShutDown
+          Value: true

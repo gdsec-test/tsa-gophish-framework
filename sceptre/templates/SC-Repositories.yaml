@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: PhishFramework ECR Repository
+
+Resources:
+  GophishRepository:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: ECR
+      ProvisioningArtifactName: 1.1.0
+      ProvisionedProductName: GophishRepository
+      ProvisioningParameters:
+        - Key: ECRRepoName
+          Value: gophish
+      Tags:
+        - Key: doNotShutDown
+          Value: true

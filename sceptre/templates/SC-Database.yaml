@@ -1,6 +1,20 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: PhishFramework Aurora Database
 
+Parameters:
+  SSMParamPrivateDbSG:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::SecurityGroup::Id>
+    Description: SSM Parameter storing private db security group id
+    Default: /AdminParams/VPC/PrivateDbSG
+  SSMParamPrivateSubnetCIDRDXAPPAZA:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: SSM Parameter referencing private DX APP subnet AZA
+    Default: /AdminParams/VPC/PrivateSubnetCIDRDXAPPAZA
+  SSMParamPrivateSubnetCIDRDXAPPAZB:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: SSM Parameter referencing private DX APP subnet AZB
+    Default: /AdminParams/VPC/PrivateSubnetCIDRDXAPPAZB
+
 Resources:
   GophishDBUserCredentials:
     Type: AWS::SecretsManager::Secret
@@ -33,6 +47,52 @@ Resources:
           Value: '{
             "sql_mode": "ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
           }'
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  SecurityGroupRuleDXAPPAZA:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: SecurityGroupIngressRule
+      ProvisioningArtifactName: 1.0.1
+      ProvisionedProductName: SecurityGroupRuleDXAPPAZA
+      ProvisioningParameters:
+        - Key: FromPort
+          Value: 3306
+        - Key: ToPort
+          Value: 3306
+        - Key: Protocol
+          Value: TCP
+        - Key: DestinationSecurityGroupId
+          Value: !Ref SSMParamPrivateDbSG
+        - Key: SourceCidrIp
+          Value: !Ref SSMParamPrivateSubnetCIDRDXAPPAZA
+        - Key: Description
+          Value: Allow access to Aurora from private DX APP subnet AZA
+      Tags:
+        - Key: doNotShutDown
+          Value: true
+
+  SecurityGroupRuleDXAPPAZB:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: SecurityGroupIngressRule
+      ProvisioningArtifactName: 1.0.1
+      ProvisionedProductName: SecurityGroupRuleDXAPPAZB
+      ProvisioningParameters:
+        - Key: FromPort
+          Value: 3306
+        - Key: ToPort
+          Value: 3306
+        - Key: Protocol
+          Value: TCP
+        - Key: DestinationSecurityGroupId
+          Value: !Ref SSMParamPrivateDbSG
+        - Key: SourceCidrIp
+          Value: !Ref SSMParamPrivateSubnetCIDRDXAPPAZB
+        - Key: Description
+          Value: Allow access to Aurora from private DX APP subnet AZB
       Tags:
         - Key: doNotShutDown
           Value: true

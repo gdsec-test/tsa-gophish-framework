@@ -14,16 +14,6 @@ Parameters:
     Default: /AdminParams/Team/Environment
     AllowedValues:
       - /AdminParams/Team/Environment
-  SSOHost:
-    Type: String
-    Description: SSO endpoint used by the status lambda
-    Default: "sso.gdcorp.tools"
-  DXVpcSecurityGroups:
-    Type: AWS::SSM::Parameter::Value<String>
-    Description: SSM Parameter for private dx app security group id
-    Default: /AdminParams/VPC/PrivateDXAPPSG
-    AllowedValues:
-      - /AdminParams/VPC/PrivateDXAPPSG
   DXVpcSubnetIds:
     Type: AWS::SSM::Parameter::Value<List<String>>
     Description: SSM Parameter for private dx app subnet ids
@@ -34,73 +24,8 @@ Parameters:
     Type: String
     Description: ACM Certificate ID for ALB in front of the status lambda
     Default: ""
-  StatusLambdaHash:
-    Type: String
-    Description: SHA1 hash of the status lambda source
-    Default: ""
 
 Resources:
-  StatusRole:
-    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
-    Properties:
-      ProductName: IAMRole
-      ProvisioningArtifactName: 1.0.10
-      ProvisionedProductName: StatusRole
-      ProvisioningParameters:
-        - Key: RoleNameSuffix
-          Value: StatusRole
-        - Key: ManagedPolicyArns
-          Value: !Join
-            - ","
-            -
-              - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-              - arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
-              - arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess
-              - arn:aws:iam::aws:policy/CloudWatchLogsFullAccess
-              - !Sub arn:aws:iam::${AWS::AccountId}:policy/${DevelopmentTeam}-custom-GophishPolicySecretsManager
-        - Key: AssumingServices
-          Value: lambda.amazonaws.com
-      Tags:
-        - Key: doNotShutDown
-          Value: true
-
-  StatusLambda:
-    DependsOn:
-      - StatusRole
-    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
-    Properties:
-      ProductName: Lambda
-      ProvisioningArtifactName: 2.6.1
-      ProvisionedProductName: StatusLambda
-      ProvisioningParameters:
-        - Key: S3Bucket
-          Value: !Sub gd-${DevelopmentTeam}-${DevelopmentEnvironment}-code-bucket
-        - Key: S3Key
-          Value: !Sub status/${StatusLambdaHash}
-        - Key: Handler
-          Value: status.handler
-        - Key: LambdaName
-          Value: status
-        - Key: LambdaDescription
-          Value: !Sub Security Exercise Status lambda (${StatusLambdaHash})
-        - Key: MemorySize
-          Value: 256
-        - Key: Runtime
-          Value: python3.8
-        - Key: Timeout
-          Value: 15
-        - Key: CustomIAMRoleNameSuffix
-          Value: StatusRole
-        - Key: EnvironmentVariablesJson
-          Value: !Sub '{"SSO_HOST": "${SSOHost}"}'
-        - Key: VpcSecurityGroups
-          Value: !Ref DXVpcSecurityGroups
-        - Key: VpcSubnetIds
-          Value: !Join [ ",", !Ref DXVpcSubnetIds ]
-      Tags:
-        - Key: doNotShutDown
-          Value: true
-
   StatusSecurityGroup:
     Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
     Properties:
@@ -192,7 +117,6 @@ Resources:
 
   StatusLambdaALBRoute:
     DependsOn:
-      - StatusLambda
       - StatusALBListener
     Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
     Properties:

@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: PhishFramework Fargate Cluster
+
+Resources:
+  FargateCluster:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: FargateCluster
+      ProvisioningArtifactName: 1.1.0
+      ProvisionedProductName: FargateCluster
+      ProvisioningParameters:
+        - Key: ClusterName
+          Value: PhishFramework
+      Tags:
+        - Key: doNotShutDown
+          Value: true

@@ -1,0 +1,119 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: PhishFramework Fargate Resources
+
+Parameters:
+  GophishCertificateId:
+    Type: String
+    Description: ACM Certificate ID for ALB in front of the admin service
+    Default: ""
+  LandingCertificateId:
+    Type: String
+    Description: ACM Certificate ID for ALB in front of the phish service
+    Default: ""
+  GophishWebACLArn:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: SSM Parameter for Gophish WAFv2 Web ACL Arn
+    Default: /Team/WAFv2/Regional/gophish/WebACLArn
+    AllowedValues:
+      - /Team/WAFv2/Regional/gophish/WebACLArn
+
+Resources:
+  GophishService:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: FargateService
+      ProvisioningArtifactName: 1.11.3
+      ProvisionedProductName: GophishService
+      ProvisioningParameters:
+        - Key: ServiceName
+          Value: gophish
+        - Key: EnvironmentVariablesJson
+          Value: '[{"Name": "MODE", "Value": "admin"}]'
+        - Key: LoadBalancerVPCSubnetParamName
+          Value: /AdminParams/VPC/DXAPPSubnets
+        - Key: TrafficType
+          Value: internal
+        - Key: CertificateId
+          Value: !Ref GophishCertificateId
+        - Key: Cpu
+          Value: 2048
+        - Key: Memory
+          Value: 4GB
+        - Key: ContainerPort
+          Value: 3333
+        - Key: HealthCheckPath
+          Value: /login
+        - Key: WAFV2AclArn
+          Value: !Ref GophishWebACLArn
+        - Key: ClusterName
+          Value: PhishFramework
+        - Key: ECRRepo
+          Value: !Sub ${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/gophish
+        - Key: AllowDBAccess
+          Value: true
+        - Key: PrivateTaskVPCSubnetParamName
+          Value: /AdminParams/VPC/DXAPPSubnets
+        - Key: CustomIAMRoleNameSuffix
+          Value: TaskRole
+        - Key: RequiresIngress
+          Value: true
+        - Key: MinContainers
+          Value: 1
+        - Key: DesiredContainers
+          Value: 1
+        - Key: ContainerProtocol
+          Value: HTTP
+        - Key: AccessLogsEnabled
+          Value: true
+      Tags:
+        - Key: doNotShutDown
+          Value: false
+
+  LandingService:
+    Type: AWS::ServiceCatalog::CloudFormationProvisionedProduct
+    Properties:
+      ProductName: FargateService
+      ProvisioningArtifactName: 1.11.3
+      ProvisionedProductName: LandingService
+      ProvisioningParameters:
+        - Key: ServiceName
+          Value: landing
+        - Key: EnvironmentVariablesJson
+          Value: '[{"Name": "MODE", "Value": "phish"}]'
+        - Key: LoadBalancerVPCSubnetParamName
+          Value: /AdminParams/VPC/PublicSubnets
+        - Key: TrafficType
+          Value: internet-facing
+        - Key: CertificateId
+          Value: !Ref LandingCertificateId
+        - Key: Cpu
+          Value: 1024
+        - Key: Memory
+          Value: 2GB
+        - Key: ContainerPort
+          Value: 8080
+        - Key: HealthCheckPath
+          Value: /static/healthcheck.html
+        - Key: ClusterName
+          Value: PhishFramework
+        - Key: ECRRepo
+          Value: !Sub ${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/gophish
+        - Key: AllowDBAccess
+          Value: true
+        - Key: PrivateTaskVPCSubnetParamName
+          Value: /AdminParams/VPC/DXAPPSubnets
+        - Key: CustomIAMRoleNameSuffix
+          Value: TaskRole
+        - Key: RequiresIngress
+          Value: true
+        - Key: MinContainers
+          Value: 1
+        - Key: DesiredContainers
+          Value: 1
+        - Key: ContainerProtocol
+          Value: HTTP
+        - Key: AccessLogsEnabled
+          Value: true
+      Tags:
+        - Key: doNotShutDown
+          Value: false
