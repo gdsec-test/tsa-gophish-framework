@@ -1,0 +1,42 @@
+name: PhishFramework Container Rotation
+
+# Rotates containers by forcing a redeployment once per day.  This is to
+# satisfy the requirement that containers have a maximum runtime of 24 hours.
+
+# This workflow can be deployed manually through workflow_dispatch; but will
+# always be run at 3:08 AM UTC.
+
+on:
+  schedule:
+    - cron: "8 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  rotate_dev_private:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@0309c38ebd10f90dfbb3889431bcf4ea38088012
+        with:
+          aws-access-key-id: ${{ secrets.DEV_PRIVATE_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.DEV_PRIVATE_AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: arn:aws:iam::911872167152:role/GD-AWS-USA-CTO-Phish-Dev-Private-Deploy
+          role-duration-seconds: 3600
+          aws-region: us-west-2
+
+      - name: Set up Python 3.9.0
+        uses: actions/setup-python@dc73133d4da04e56a135ae2246682783cc7c7cb6
+        with:
+          python-version: 3.9.0
+          architecture: 'x64'
+
+      - name: Setup python environment and force redeployment
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install -U pip
+          python -m pip install awscli
+          sh -x tools/update_service.sh

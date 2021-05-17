@@ -8,21 +8,17 @@
 
 * Cloud Readiness Review
 * CICD - GitHub Actions
-  - Infrastructure / Sceptre
   - Container build/deploy pipeline (Gophish)
   - Generate ServiceNow change orders when deploying to prod
 
 ### Current Exceptions
 
 * App-level encryption of PII data (employee emails)
-* Containers are not rotated every 24 hours
 * Gophish logging does not use application security logging format
 
 ### Development
 
-* TLS for traffic from ALB to Gophish
 * Container/ECS scaling configuration
-* Container rotation
 * Adjust healthcheck intervals
 
 ### Future
