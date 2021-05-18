@@ -17,8 +17,9 @@ Gophish framework for social engineering security exercises
 
 * [Playbooks](docs/PLAYBOOKS.md)
 
-  Step by step instructions for common maintenance operations, such as
-  deploying new builds of the Gophish container or status lambda.
+  Playbooks and other miscellaneous instructions for common maintenance
+  operations, such as deploying new builds of the Gophish container or status
+  lambda.
 
 * [Developer Documentation](docs/DEVELOPER.md)
 

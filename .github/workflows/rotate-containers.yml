@@ -1,4 +1,4 @@
-name: PhishFramework Container Rotation
+name: Container Rotation
 
 # Rotates containers by forcing a redeployment once per day.  This is to
 # satisfy the requirement that containers have a maximum runtime of 24 hours.
