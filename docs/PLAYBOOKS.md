@@ -106,6 +106,7 @@ The below steps may be useful to developers or support personnel while
 additional tools and processes are under development.
 
 * [Backup and Restore operations](#backup-and-restore-operations)
+* [Data sanitization](#data-sanitization)
 * [Recovery process](#recovery-process)
 * [Deploying a new Gophish container build](#deploying-a-new-gophish-container-build)
 * [Deploying a new status lambda](#deploying-a-new-status-lambda)
@@ -132,6 +133,17 @@ the MySQL database credential information from AWS Secrets Manager.
   MySQL prompt for diagnostics or troubleshooting.  A database dump produced by
   the above script can be passed as input to this tool to restore a previous
   Gophish database backup.
+
+### Data sanitization
+
+* [tools/hash_user_data.sh](../tools/hash_user_data.sh)
+
+  This utility obtains database credentials from AWS Secrets Manager and then
+  initiates a MySQL connection to the Gophish database.  It then sanitizes data
+  fields in the MySQL database that are known to contain employee PII data by
+  either replacing those elements with empty strings, or replacing email
+  addresses with an MD5 hash of the email address.  Campaign summary
+  information is preserved even after this sanitization process is performed.
 
 ### Recovery process
 
