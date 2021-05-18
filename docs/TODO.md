@@ -1,9 +1,5 @@
 # TO-DO Items
 
-### Documentation
-
-* Troubleshooting
-
 ### Project
 
 * Cloud Readiness Review
