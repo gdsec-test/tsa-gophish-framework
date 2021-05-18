@@ -1,4 +1,4 @@
-name: PhishFramework Deployment (DEV-PRIVATE)
+name: Deployment (DEV-PRIVATE)
 
 # Deploys the PhishFramework main branch to the AWS DEV-PRIVATE environment
 # using sceptre.

@@ -57,15 +57,15 @@ The following GitHub actions workflows are configured for this repository:
   * Runs Tartufo as the first check
   * On success of Tartufo, triggers `python-code-check` job
 
-* [PhishFramework Deployment (DEV-PRIVATE)](../.github/workflows/deploy-to-dev-private.yml)
-
-  * Triggered manually
-  * Runs sceptre to deploy DEV-PRIVATE environment
-
-* [PhishFramework Container Rotation](../.github/workflows/rotate-containers.yml)
+* [Container Rotation](../.github/workflows/rotate-containers.yml)
 
   * Triggered daily at 3:08 AM UTC (or manually)
   * Forces an update of the Gophish ECS service to force container rotations
+
+* [Deployment (DEV-PRIVATE)](../.github/workflows/deploy-to-dev-private.yml)
+
+  * Triggered manually
+  * Runs sceptre to deploy DEV-PRIVATE environment
 
 ## Monitoring
 
