@@ -1,0 +1,59 @@
+name: Deployment (PROD)
+
+# Deploys the PhishFramework main branch to the AWS PROD environment
+# using sceptre.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy_to_prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+
+      - name: Set up Python 3.9.0
+        uses: actions/setup-python@dc73133d4da04e56a135ae2246682783cc7c7cb6
+        with:
+          python-version: 3.9.0
+          architecture: 'x64'
+
+      - name: Setup Python Environment
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install -U pip
+
+      - name: Install Python dependencies
+        env:
+          SECURESERVER_ACCESS_KEY: ${{ secrets.SECURESERVER_ACCESS_KEY }}
+          GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+        run: |
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${SECURESERVER_ACCESS_KEY}"
+          source venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install -U -r requirements.txt -r requirements-test.txt
+          ssh-agent -k
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@0309c38ebd10f90dfbb3889431bcf4ea38088012
+        with:
+          aws-access-key-id: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: arn:aws:iam::717081260494:role/GD-AWS-USA-CTO-Phish-Prod-Deploy
+          role-duration-seconds: 3600
+          aws-region: us-west-2
+
+      - name: Run sceptre
+        env:
+          SECURESERVER_ACCESS_KEY: ${{ secrets.SECURESERVER_ACCESS_KEY }}
+          GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+        run: |
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "${SECURESERVER_ACCESS_KEY}"
+          source venv/bin/activate
+          cd sceptre
+          sceptre launch -y prod/us-west-2
+          ssh-agent -k
