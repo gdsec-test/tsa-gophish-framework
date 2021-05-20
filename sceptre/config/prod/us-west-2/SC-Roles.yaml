@@ -1,0 +1,3 @@
+template_path: SC-Roles.yaml
+dependencies:
+  - {{environment}}/{{region}}/SC-Policies.yaml
