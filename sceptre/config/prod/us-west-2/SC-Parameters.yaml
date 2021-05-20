@@ -1,0 +1,3 @@
+template_path: SC-Parameters.yaml
+parameters:
+  GophishAPIUrl: {{gophish_api_url}}

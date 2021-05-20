@@ -24,6 +24,7 @@ This project is a Tier 4 service.
 
 * DEV-PRIVATE
 
+  * AWS Account: 911872167152 (GD-AWS-USA-CTO-Phish-Dev-Private)
   * [Gophish Administrative Interface](https://admin.phish.int.dev-gdcorp.tools/) (internal)
   * [Security Exercise Status Page](https://phish.int.dev-gdcorp.tools/) (internal, requires SSO)
   * Phishing Landing Page: https://landing.phish.gdcorp.tools (external)
@@ -34,7 +35,10 @@ This project is a Tier 4 service.
 
 * PROD
 
-  TBD
+  * AWS Account: 717081260494 (GD-AWS-USA-CTO-Phish-Prod)
+  * [Gophish Administrative Interface](https://admin.phish.int.gdcorp.tools/) (internal)
+  * [Security Exercise Status Page](https://phish.int.gdcorp.tools/) (internal, requires SSO)
+  * Phishing Landing Page: https://site.phish.gdcorp.tools (external)
 
 ## Architecture Overview
 

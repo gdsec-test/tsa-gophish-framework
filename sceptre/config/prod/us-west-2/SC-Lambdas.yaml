@@ -1,0 +1,14 @@
+template_path: SC-Lambdas.yaml
+dependencies:
+  - {{environment}}/{{region}}/SC-CodeBucket.yaml
+  - {{environment}}/{{region}}/SC-Roles.yaml
+parameters:
+  SSOHost: {{sso_host}}
+  PreConfigLambdaHash: !file_contents ../lambdas/preconfig/lambda.sha1
+  PostConfigLambdaHash: !file_contents ../lambdas/postconfig/lambda.sha1
+  StatusLambdaHash: !file_contents ../lambdas/status/lambda.sha1
+hooks:
+  before_create:
+    - !cmd resources/build_lambdas.sh
+  before_update:
+    - !cmd resources/build_lambdas.sh

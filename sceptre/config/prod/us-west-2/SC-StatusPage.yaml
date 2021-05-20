@@ -1,0 +1,5 @@
+template_path: SC-StatusPage.yaml
+dependencies:
+  - {{environment}}/{{region}}/SC-Services.yaml
+parameters:
+  StatusCertificateId: {{status_certificate_id}}
