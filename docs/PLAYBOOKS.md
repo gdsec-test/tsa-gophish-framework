@@ -31,7 +31,7 @@ This project is a Tier 4 service.
 
 * TEST
 
-  TBD
+  * TBD
 
 * PROD
 
@@ -70,6 +70,11 @@ The following GitHub actions workflows are configured for this repository:
 
   * Triggered manually
   * Runs sceptre to deploy DEV-PRIVATE environment
+
+* [Deployment (PROD)](../.github/workflows/deploy-to-prod.yml)
+
+  * Triggered manually
+  * Runs sceptre to deploy PROD environment
 
 ## Monitoring
 
