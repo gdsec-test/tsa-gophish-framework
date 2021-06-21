@@ -27,10 +27,10 @@ jobs:
           role-duration-seconds: 3600
           aws-region: us-west-2
 
-      - name: Set up Python 3.9.0
+      - name: Set up Python 3.8
         uses: actions/setup-python@dc73133d4da04e56a135ae2246682783cc7c7cb6
         with:
-          python-version: 3.9.0
+          python-version: 3.8
           architecture: 'x64'
 
       - name: Setup python environment and force redeployment
@@ -56,10 +56,10 @@ jobs:
           role-duration-seconds: 3600
           aws-region: us-west-2
 
-      - name: Set up Python 3.9.0
+      - name: Set up Python 3.8
         uses: actions/setup-python@dc73133d4da04e56a135ae2246682783cc7c7cb6
         with:
-          python-version: 3.9.0
+          python-version: 3.8
           architecture: 'x64'
 
       - name: Setup python environment and force redeployment
