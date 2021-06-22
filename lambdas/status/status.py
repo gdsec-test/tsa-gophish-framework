@@ -36,6 +36,9 @@ HTML_HEADER = dedent(
     <meta charset="utf-8"/>
     <title>GoDaddy Security Exercise Status</title>
     <style>
+      a {
+        color: #909090;
+      }
       body {
         background-color: #202020;
         color: #909090;
@@ -82,31 +85,6 @@ HTML_HEADER = dedent(
         padding: 15px; 50px;
         text-align: center;
       }
-      /* Style the button that is used to open and close the collapsible content */
-      .collapsible {
-        background-color: #eee;
-        color: #444;
-        cursor: pointer;
-        padding: 18px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 15px;
-      }
-
-      /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-      .active, .collapsible:hover {
-        background-color: #ccc;
-      }
-
-      /* Style the collapsible content. Note: hidden by default */
-      .content {
-        padding: 0 18px;
-        display: none;
-        overflow: hidden;
-        background-color: #f1f1f1;
-      }
     </style>
     </head>
     <body>
@@ -115,31 +93,20 @@ HTML_HEADER = dedent(
 
 HTML_FOOTER = dedent(
     """\
-    <button type="button" class="collapsible">Legal Notice</button>
-    <div class="content">
-    <p>“GoDaddy’s Social Engineering Assessment (SEA) Platform is a tool utilized by our InfoSec team to provide<br>
-        transparency into our employee training efforts, including aggregated data that monitors the effectiveness<br>
-        of these assessments, which are critical to helping us properly recognize and handle deceptive phishing email<br>
-        from threat actors. We all must remain vigilant against these threat actors to be trusted partners for our everyday<br>
-        entrepreneurs. We do not capture or store your credentials in the SEA Platform and ensure that all assessments are<br>
-        conducted in a manner consistent  with our <a href="https://godaddy.service-now.com/gdep/?id=gdep_kb_article&sysparm_article=KB0014214">Employee Privacy policy</a> and local staff handbooks, as applicable.”  </p>
-    </div>
-    <script type="text/javascript">
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-            });
-        }
-        </script>
+    <h1>Privacy Notice</h1>
+    <p>
+      GoDaddy's Social Engineering Assessment (SEA) Platform is a tool utilized
+      by our InfoSec team to provide transparency into our employee training
+      efforts, including aggregated data that monitors the effectiveness of
+      these assessments, which are critical to helping us properly recognize
+      and handle deceptive phishing email from threat actors. We all must
+      remain vigilant against these threat actors to be trusted partners for
+      our everyday entrepreneurs. We do not capture or store your credentials
+      in the SEA Platform and ensure that all assessments are conducted in a
+      manner consistent with our
+      <a href="https://godaddy.service-now.com/gdep/?id=gdep_kb_article&sysparm_article=KB0014214">Employee Privacy policy</a>
+      and local staff handbooks, as applicable.
+    </p>
     </body>
     </html>
     """
