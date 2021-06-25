@@ -36,6 +36,9 @@ HTML_HEADER = dedent(
     <meta charset="utf-8"/>
     <title>GoDaddy Security Exercise Status</title>
     <style>
+      a {
+        color: #909090;
+      }
       body {
         background-color: #202020;
         color: #909090;
@@ -90,6 +93,20 @@ HTML_HEADER = dedent(
 
 HTML_FOOTER = dedent(
     """\
+    <h1>Privacy Notice</h1>
+    <p>
+      GoDaddy's Social Engineering Assessment (SEA) Platform is a tool utilized
+      by our InfoSec team to provide transparency into our employee training
+      efforts, including aggregated data that monitors the effectiveness of
+      these assessments, which are critical to helping us properly recognize
+      and handle deceptive phishing email from threat actors. We all must
+      remain vigilant against these threat actors to be trusted partners for
+      our everyday entrepreneurs. We do not capture or store your credentials
+      in the SEA Platform and ensure that all assessments are conducted in a
+      manner consistent with our
+      <a href="https://godaddy.service-now.com/gdep/?id=gdep_kb_article&sysparm_article=KB0014214">Employee Privacy policy</a>
+      and local staff handbooks, as applicable.
+    </p>
     </body>
     </html>
     """
