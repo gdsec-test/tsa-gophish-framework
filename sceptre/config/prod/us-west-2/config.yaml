@@ -1,6 +1,6 @@
 region: us-west-2
 gophish_certificate_id: aeda5435-0436-489e-b84b-02a32872838f
-landing_certificate_id: d7a4f0d2-198b-4725-a874-7d7518772ffc
+landing_certificate_id: 6c0badf5-4a2f-42e7-b286-78c34b4ef6eb
 status_certificate_id: 43d76ec3-1fcf-4557-9ee3-40e1f97d09ed
 gophish_api_url: https://admin.phish.int.gdcorp.tools
 sso_host: sso.gdcorp.tools
