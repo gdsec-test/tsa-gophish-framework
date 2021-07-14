@@ -109,10 +109,10 @@ HTML_FOOTER = dedent(
     </p>
     <h2>Metrics</h2>
     <p>
-    Please note that the <i>Clicked Link</i> and <i>Email Opened</i> metric reflect
+    Please note that the <i>Clicked Link</i> and <i>Email Opened</i> metrics reflect
     the number of emails sent due to Security tooling that automatically evaluates
     links in emails; this does not reflect the actual count of clicked links or opened
-    emails. We are working towards addressing those metrices.
+    emails. We are working towards addressing those metrics.
     </p>
     </body>
     </html>
