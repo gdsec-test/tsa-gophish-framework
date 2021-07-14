@@ -107,6 +107,14 @@ HTML_FOOTER = dedent(
       <a href="https://godaddy.service-now.com/gdep/?id=gdep_kb_article&sysparm_article=KB0014214">Employee Privacy policy</a>
       and local staff handbooks, as applicable.
     </p>
+    <br>
+    <h2>Metrics</h2>
+    <p>
+    Please note that the <i>Clicked Link</i> metric reflects the number of emails
+    sent due to Security tooling that automatically evaluates links in emails;
+    this does not reflect the actual count of clicked links. We are working
+    towards addressing this metric.
+    </p>
     </body>
     </html>
     """
