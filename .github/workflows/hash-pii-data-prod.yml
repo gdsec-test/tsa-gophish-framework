@@ -1,4 +1,4 @@
-name: PII Hashing
+name: Hash PII Data (PROD)
 
 # Will connect to the Database and hash the email addresses in there
 # to remove any PII in the platform
