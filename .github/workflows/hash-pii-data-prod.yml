@@ -1,0 +1,40 @@
+name: Hash PII Data (PROD)
+
+# Will connect to the Database and hash the email addresses in there
+# to remove any PII in the platform
+
+# This workflow is supposed to be run manually after the end of every campaign/
+# gambit as part of the playbook for phishing campaigns
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hash_prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@ea7b857d8a33dc2fb4ef5a724500044281b49a5e
+        with:
+          aws-access-key-id: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: arn:aws:iam::717081260494:role/GD-AWS-USA-CTO-Phish-Prod-Deploy
+          role-duration-seconds: 3600
+          aws-region: us-west-2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@f38219332975fe8f9c04cca981d674bf22aea1d3
+        with:
+          python-version: 3.8
+          architecture: 'x64'
+
+      - name: Connect to the MySQL DB and hash PII using MD5
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install -U pip
+          python -m pip install awscli
+          sh -x tools/hash_user_data.sh
