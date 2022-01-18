@@ -275,7 +275,7 @@ To configure a certificate for use by a landing page, follow these steps:
    ```
    $ vi landing_certificate_id sceptre/config/dev-private/us-west-2/config.yaml
    ...
-   landing_certificate_id: b70feb74-94e0-4f34-8e5b-5205232b29a4
+   landing_certificate_id: d6c93702-e493-43b3-925e-27278725c986
    ...
    ```
 
