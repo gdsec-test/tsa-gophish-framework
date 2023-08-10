@@ -19,7 +19,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@fc3959cb4cf5a821ab7a5a636ea4f1e855b05180
+        uses: aws-actions/amazon-ecr-login@2fc7aceee09e9e4a7105c0d060c656fad0b4f63d
 
       - name: Docker login for Golden Containers ECR
         env:
