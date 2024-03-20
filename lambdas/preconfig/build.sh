@@ -6,7 +6,7 @@ set -eu
 SHA1HASH=$(cat *.py | shasum | cut -d' ' -f1)
 
 # See if we can reuse the existing build
-if [[ -f function.zip && -f lambda.sha1 && "$(< lambda.sha1)" == "${SHA1HASH}" ]]; then
+if [[ -f function.zip && -f lambda.sha1 && "$(< lambda.sha1)" == "${SHA1HASH}" ]]; then  
     echo "Reusing existing build"
     exit 0
 fi
